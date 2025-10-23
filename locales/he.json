@@ -6,6 +6,8 @@
   "header": {
     "brand": "AquaPump",
     "nav_products": "מוצרים",
+    "nav_technology": "טכנולוגיה",
+    "nav_sustainability": "קיימות",
     "nav_contact": "צור קשר",
     "cta_quote": "קבל הצעת מחיר"
   },
@@ -54,6 +56,7 @@
   "contact": {
     "title": "צור קשר",
     "name": "שם מלא",
+    "phone": "טלפון",
     "email": "אימייל",
     "message": "הודעה",
     "send": "שליחה"

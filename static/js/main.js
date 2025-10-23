@@ -6,6 +6,7 @@
   const navMenu = document.getElementById('navMenu');
   const langBtn = document.getElementById('langToggle');
   const themeBtn = document.getElementById('themeToggle');
+  const themeIcon = themeBtn?.querySelector('[data-theme-icon]');
   const chat = document.querySelector('.chatbot');
   const chatToggle = document.getElementById('chatToggle');
   const chatClose = document.getElementById('chatClose');
@@ -13,15 +14,27 @@
   const chatInput = document.getElementById('chatInput');
   const chatMessages = document.getElementById('chatMessages');
   const contactForm = document.getElementById('contactForm');
+  const appConfig = window.APP_CONFIG || {};
+  const supabaseConfig = appConfig.supabase || {};
+  const CONTACT_TABLE = supabaseConfig.contact_table || 'contact_messages';
+  const chatbotConfig = appConfig.chatbot || {};
+  const chatbotReady = Boolean(chatbotConfig.api_key_set);
 
   let lang = localStorage.getItem('lang') || 'en';
   let theme = localStorage.getItem('theme') || 'light';
+  let langRequestToken = 0;
+
+  langBtn?.setAttribute('dir', 'ltr');
 
   function applyTheme() {
     const isDark = theme === 'dark';
     html.classList.toggle('dark', isDark);
-    themeBtn.textContent = isDark ? '🌙' : '☀️';
-    themeBtn.setAttribute('aria-label', isDark ? 'Switch to light theme' : 'Switch to dark theme');
+    if (themeIcon) {
+      themeIcon.textContent = isDark ? '🌙' : '☀️';
+    } else if (themeBtn) {
+      themeBtn.textContent = isDark ? '🌙' : '☀️';
+    }
+    themeBtn?.setAttribute('aria-label', isDark ? 'Switch to light theme' : 'Switch to dark theme');
     localStorage.setItem('theme', theme);
   }
 
@@ -32,68 +45,79 @@
     }
   }
 
-  function applyLang() {
+  async function applyLang() {
+    const requestId = ++langRequestToken;
     html.setAttribute('lang', lang);
     html.setAttribute('dir', lang === 'he' ? 'rtl' : 'ltr');
     localStorage.setItem('lang', lang);
-    fetch(`/static/locales/${lang}.json`)
-      .then((response) => response.json())
-      .then((dict) => {
-        document.title = dict.meta.title;
-        const metaDescription = document.querySelector('meta[name="description"]');
-        if (metaDescription) {
-          metaDescription.setAttribute('content', dict.meta.description);
-        }
+    try {
+      const response = await fetch(`/static/locales/${lang}.json`, { cache: 'no-cache' });
+      if (!response.ok) {
+        throw new Error(`Missing locale file for ${lang}`);
+      }
+      const dict = await response.json();
+      if (requestId !== langRequestToken) {
+        return;
+      }
+      document.title = dict.meta.title;
+      const metaDescription = document.querySelector('meta[name="description"]');
+      if (metaDescription) {
+        metaDescription.setAttribute('content', dict.meta.description);
+      }
 
-        setText('brand', dict.header.brand);
-        setText('navProducts', dict.header.nav_products);
-        setText('navContact', dict.header.nav_contact);
-        setText('ctaQuote', dict.header.cta_quote);
+      setText('brand', dict.header.brand);
+      setText('navProducts', dict.header.nav_products);
+      setText('navTechnology', dict.header.nav_technology);
+      setText('navSustainability', dict.header.nav_sustainability);
+      setText('navContact', dict.header.nav_contact);
+      setText('ctaQuote', dict.header.cta_quote);
 
-        const page = body.dataset.page || 'home';
-        if (page === 'home') {
-          setText('eyebrow', dict.hero.eyebrow);
-          setText('title', dict.hero.title);
-          setText('subtitle', dict.hero.subtitle);
-          setText('primaryBtn', dict.hero.primary);
-          setText('secondaryBtn', dict.hero.secondary);
-          setText('expertiseTitle', dict.sections.expertise || '');
-          setText('expertiseLead', dict.sections.lead || '');
-          const cards = dict.sections.cards || [];
-          cards.forEach((card, index) => {
-            const cardRoot = document.getElementById(`card${index + 1}`);
-            if (cardRoot) {
-              const heading = cardRoot.querySelector('h3');
-              const paragraph = cardRoot.querySelector('p');
-              if (heading) heading.textContent = card.title;
-              if (paragraph) paragraph.textContent = card.desc;
-            }
-          });
-          const stats = dict.sections.stats || [];
-          stats.forEach((stat, index) => {
-            const statRoot = document.getElementById(`stat${index + 1}`);
-            if (statRoot) {
-              const value = statRoot.querySelector('.stat__value');
-              const label = statRoot.querySelector('.stat__label');
-              if (value) value.textContent = stat.k;
-              if (label) label.textContent = stat.v;
-            }
-          });
-        } else if (page === 'products') {
-          setText('productsTitle', dict.products.title);
-        } else if (page === 'contact') {
-          setText('contactTitle', dict.contact.title);
-          setText('nameLabel', dict.contact.name);
-          setText('emailLabel', dict.contact.email);
-          setText('messageLabel', dict.contact.message);
-          setText('sendBtn', dict.contact.send);
-        }
+      const page = body.dataset.page || 'home';
+      if (page === 'home') {
+        setText('eyebrow', dict.hero.eyebrow);
+        setText('title', dict.hero.title);
+        setText('subtitle', dict.hero.subtitle);
+        setText('primaryBtn', dict.hero.primary);
+        setText('secondaryBtn', dict.hero.secondary);
+        setText('expertiseTitle', dict.sections.expertise || '');
+        setText('expertiseLead', dict.sections.lead || '');
+        const cards = dict.sections.cards || [];
+        cards.forEach((card, index) => {
+          const cardRoot = document.getElementById(`card${index + 1}`);
+          if (cardRoot) {
+            const heading = cardRoot.querySelector('h3');
+            const paragraph = cardRoot.querySelector('p');
+            if (heading) heading.textContent = card.title;
+            if (paragraph) paragraph.textContent = card.desc;
+          }
+        });
+        const stats = dict.sections.stats || [];
+        stats.forEach((stat, index) => {
+          const statRoot = document.getElementById(`stat${index + 1}`);
+          if (statRoot) {
+            const value = statRoot.querySelector('.stat__value');
+            const label = statRoot.querySelector('.stat__label');
+            if (value) value.textContent = stat.k;
+            if (label) label.textContent = stat.v;
+          }
+        });
+      } else if (page === 'products') {
+        setText('productsTitle', dict.products.title);
+      } else if (page === 'contact') {
+        setText('contactTitle', dict.contact.title);
+        setText('nameLabel', dict.contact.name);
+        setText('phoneLabel', dict.contact.phone);
+        setText('emailLabel', dict.contact.email);
+        setText('messageLabel', dict.contact.message);
+        setText('sendBtn', dict.contact.send);
+      }
 
+      if (langBtn) {
         langBtn.textContent = lang.toUpperCase();
-      })
-      .catch(() => {
-        console.warn('Missing locale file for', lang);
-      });
+      }
+    } catch (error) {
+      console.warn(error.message);
+    }
   }
 
   function toggleNav(forceState) {
@@ -117,6 +141,7 @@
 
   langBtn?.addEventListener('click', () => {
     lang = lang === 'en' ? 'he' : 'en';
+    toggleNav(false);
     applyLang();
   });
 
@@ -162,14 +187,43 @@
 
   chatClose?.addEventListener('click', () => setChatState(false));
 
+  function buildContactPayload(form) {
+    const formData = new FormData(form);
+    return {
+      name: (formData.get('name') || '').toString().trim(),
+      phone: (formData.get('phone') || '').toString().trim(),
+      email: (formData.get('email') || '').toString().trim(),
+      message: (formData.get('message') || '').toString().trim(),
+      submitted_at: new Date().toISOString(),
+    };
+  }
+
+  async function queueContactSubmission(payload) {
+    if (!supabaseConfig?.url || !supabaseConfig?.anon_key) {
+      return { queued: false, reason: 'missing-credentials' };
+    }
+    console.info('[Supabase] Pending integration', {
+      table: CONTACT_TABLE,
+      endpoint: supabaseConfig.url,
+      payload,
+    });
+    return { queued: true, table: CONTACT_TABLE };
+  }
+
   chatForm?.addEventListener('submit', (event) => {
     event.preventDefault();
     const value = chatInput?.value?.trim();
     if (!value) return;
     appendMessage(value, 'user');
     chatInput.value = '';
+    const placeholderReply = chatbotReady
+      ? 'Connecting you with AquaBot… (integration coming soon).'
+      : 'Thanks! A specialist will reach out shortly.';
+    if (chatbotReady) {
+      console.info('Chatbot API key detected. Plug backend integration here.', chatbotConfig);
+    }
     setTimeout(() => {
-      appendMessage('Thanks! A specialist will reach out shortly.', 'bot');
+      appendMessage(placeholderReply, 'bot');
     }, 600);
   });
 
@@ -180,6 +234,13 @@
     fields.forEach((field) => {
       const input = field.querySelector('input, textarea');
       if (!input) return;
+      input.setCustomValidity('');
+      if (input.name === 'phone') {
+        const digits = (input.value || '').replace(/\D/g, '');
+        if (digits.length < 7) {
+          input.setCustomValidity('Please provide a valid phone number.');
+        }
+      }
       const isValid = input.checkValidity();
       field.classList.toggle('is-error', !isValid);
       if (!isValid) {
@@ -187,6 +248,10 @@
       }
     });
     if (!hasErrors) {
+      const payload = buildContactPayload(contactForm);
+      queueContactSubmission(payload).catch((error) => {
+        console.warn('Supabase queue placeholder failed', error);
+      });
       contactForm.reset();
       fields.forEach((field) => field.classList.remove('is-error'));
       appendMessage('Thanks for reaching out! We will contact you shortly.', 'bot');

@@ -16,27 +16,31 @@
 {% macro nav(active_page='home') %}
 <nav class="nav" aria-label="Primary">
   <div class="container nav__inner">
-    <a class="brand" href="/" aria-label="AquaPump home">
+    <a class="nav__brand" href="/" aria-label="AquaPump home">
       <span class="brand__mark" aria-hidden="true"></span>
-      <span id="brand">AquaPump</span>
+      <span class="nav__brand-label" id="brand">AquaPump</span>
     </a>
     <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu">
+      <span class="visually-hidden">Toggle navigation</span>
       <span class="nav__toggle-bar"></span>
       <span class="nav__toggle-bar"></span>
       <span class="nav__toggle-bar"></span>
-      <span class="visually-hidden">Menu</span>
     </button>
     <div class="nav__menu" id="navMenu">
-      <div class="nav__links">
-        <a href="/products" id="navProducts" class="nav__link {% if active_page == 'products' %}is-active{% endif %}">Products</a>
-        <a href="/#technology" class="nav__link">Technology</a>
-        <a href="/#sustainability" class="nav__link">Sustainability</a>
-        <a href="/contact" id="navContact" class="nav__link {% if active_page == 'contact' %}is-active{% endif %}">Contact</a>
-      </div>
+      <ul class="nav__links" role="list">
+        <li><a href="/products" id="navProducts" class="nav__link {% if active_page == 'products' %}is-active{% endif %}">Products</a></li>
+        <li><a href="/#technology" id="navTechnology" class="nav__link nav__link--anchor">Technology</a></li>
+        <li><a href="/#sustainability" id="navSustainability" class="nav__link nav__link--anchor">Sustainability</a></li>
+        <li><a href="/contact" id="navContact" class="nav__link {% if active_page == 'contact' %}is-active{% endif %}">Contact</a></li>
+      </ul>
       <div class="nav__controls">
-        <button class="chip chip--ghost" id="langToggle" type="button">EN</button>
-        <button class="chip chip--ghost" id="themeToggle" type="button" aria-label="Toggle theme">☀️</button>
-        <a class="btn btn--pill" id="ctaQuote" href="/contact">Get Quote</a>
+        <div class="nav__toggles" role="group" aria-label="Preferences">
+          <button class="nav__chip" id="themeToggle" type="button" aria-label="Toggle theme">
+            <span aria-hidden="true" data-theme-icon>☀️</span>
+          </button>
+          <button class="nav__chip nav__chip--lang" id="langToggle" type="button" aria-label="Toggle language">EN</button>
+        </div>
+        <a class="btn btn--primary btn--xl" id="ctaQuote" href="/contact">Get Quote</a>
       </div>
     </div>
   </div>
@@ -57,8 +61,12 @@
 
 {% macro feature_card(idx, title, body) %}
 <article class="feature" id="card{{ idx }}">
-  <h3>{{ title }}</h3>
+  <div class="feature__header">
+    <span class="feature__index">0{{ idx }}</span>
+    <h3>{{ title }}</h3>
+  </div>
   <p>{{ body }}</p>
+  <span class="feature__cta" aria-hidden="true">Explore →</span>
 </article>
 {% endmacro %}
 

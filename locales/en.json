@@ -6,6 +6,8 @@
   "header": {
     "brand": "AquaPump",
     "nav_products": "Products",
+    "nav_technology": "Technology",
+    "nav_sustainability": "Sustainability",
     "nav_contact": "Contact",
     "cta_quote": "Get Quote"
   },
@@ -54,6 +56,7 @@
   "contact": {
     "title": "Contact Us",
     "name": "Full Name",
+    "phone": "Phone",
     "email": "Email",
     "message": "Message",
     "send": "Send"

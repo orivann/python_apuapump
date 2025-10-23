@@ -13,7 +13,17 @@
       </div>
     </div>
     <div class="hero__media" role="presentation">
+      <div class="hero__orb" aria-hidden="true"></div>
+      <div class="hero__mesh" aria-hidden="true"></div>
       <div class="hero__badge">Trusted by 1.2K+ projects worldwide</div>
+      <div class="hero__floating hero__floating--primary">
+        <p class="hero__floating-label">Response Time</p>
+        <p class="hero__floating-value">15m avg</p>
+      </div>
+      <div class="hero__floating hero__floating--secondary">
+        <p class="hero__floating-label">Energy Savings</p>
+        <p class="hero__floating-value">▲ 30%</p>
+      </div>
       <div class="hero__glow"></div>
     </div>
   </div>
@@ -22,6 +32,20 @@
 {% endblock %}
 
 {% block content %}
+<section class="section section--subtle" aria-label="Trusted partners">
+  <div class="container section__inner section__inner--brands">
+    <span class="chip chip--ghost section__badge">Trusted by innovators</span>
+    <ul class="brand-strip">
+      <li>Veolia</li>
+      <li>Suez</li>
+      <li>Mekorot</li>
+      <li>BlueRiver</li>
+      <li>PureFlow</li>
+      <li>AquaCity</li>
+    </ul>
+  </div>
+</section>
+
 <section class="section" id="technology">
   <div class="container section__inner">
     <div class="section__header">

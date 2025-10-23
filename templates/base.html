@@ -25,6 +25,9 @@
   </main>
   {{ ui.footer() }}
   {{ ui.chatbot() }}
+  <script>
+    window.APP_CONFIG = {{ {'supabase': supabase | default({}), 'chatbot': chatbot | default({})} | tojson }};
+  </script>
   <script src="{{ url_for('static', filename='js/main.js') }}" defer></script>
   {% block scripts %}{% endblock %}
 </body>
