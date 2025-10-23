@@ -1,0 +1,60 @@
+{
+  "meta": {
+    "title": "AquaPump — Industry-Leading Water Solutions",
+    "description": "Premium pumps and turnkey water systems for industry, agriculture, municipalities & infrastructure."
+  },
+  "header": {
+    "brand": "AquaPump",
+    "nav_products": "Products",
+    "nav_contact": "Contact",
+    "cta_quote": "Get Quote"
+  },
+  "hero": {
+    "eyebrow": "Precision • Reliability • Performance",
+    "title": "Your Pump, Our Solution",
+    "subtitle": "30+ years of excellence in water systems. From design to deployment — we deliver.",
+    "primary": "Explore Products",
+    "secondary": "Contact Sales"
+  },
+  "sections": {
+    "expertise": "Our Expertise",
+    "cards": [
+      {
+        "title": "Municipal & Infra",
+        "desc": "Large-scale pumping stations, wastewater, pressure boosting & telemetry."
+      },
+      {
+        "title": "Industrial",
+        "desc": "Process pumps, VFD optimization, energy audits & turnkey retrofits."
+      },
+      {
+        "title": "Agriculture",
+        "desc": "Irrigation systems, fertigation, and high-efficiency multi-stage pumps."
+      }
+    ],
+    "stats": [
+      {
+        "k": "30+",
+        "v": "Years"
+      },
+      {
+        "k": "1.2K",
+        "v": "Projects"
+      },
+      {
+        "k": "24/7",
+        "v": "Support"
+      }
+    ]
+  },
+  "products": {
+    "title": "Featured Products"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "name": "Full Name",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send"
+  }
+}

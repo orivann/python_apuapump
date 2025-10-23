@@ -1,0 +1,62 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Featured pumps and water solutions for industry, agriculture, municipalities.">
+  <title>AquaPump — Products</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body data-page="products">
+  <nav class="nav">
+    <div class="container nav-inner">
+      <div class="brand"><span class="drop"></span><span id="brand">AquaPump</span></div>
+      <div class="nav-links">
+        <a href="/products" id="navProducts">Products</a>
+        <a href="/contact" id="navContact">Contact</a>
+      </div>
+      <div class="controls">
+        <button class="icon-btn" id="langToggle">EN</button>
+        <button class="icon-btn" id="themeToggle">☀️</button>
+        <a class="icon-btn" id="ctaQuote" href="/contact">Get Quote</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container">
+      <span class="eyebrow">Catalog</span>
+      <h1 id="productsTitle">Featured Products</h1>
+    </div>
+    <div class="wave"></div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="grid">
+          <article class="card reveal">
+            <h3>Smart Pump SAJ</h3>
+            <p>High-efficiency pump for municipal and industrial use.</p>
+          </article>
+          <article class="card reveal">
+            <h3>Industrial Booster</h3>
+            <p>Energy-saving variable-frequency drive for agriculture.</p>
+          </article>
+          <article class="card reveal">
+            <h3>Wastewater Pro</h3>
+            <p>Robust solids-handling pump for infrastructure projects.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">© AquaPump. All rights reserved.</div>
+  </footer>
+
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

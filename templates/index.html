@@ -1,0 +1,96 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Premium pumps and turnkey water systems for industry, agriculture, municipalities & infrastructure.">
+  <meta property="og:title" content="AquaPump">
+  <meta property="og:description" content="Industry-Leading Water Solutions">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#0b63f6">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><circle cx='32' cy='32' r='28' fill='%230b63f6'/><circle cx='26' cy='26' r='16' fill='%23fff'/></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700;800;900&family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <title>AquaPump</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "AquaPump",
+    "url": "https://example.com",
+    "sameAs": [],
+    "logo": "https://example.com/logo.png"
+  }
+  </script>
+</head>
+<body data-page="home">
+  <nav class="nav">
+    <div class="container nav-inner">
+      <div class="brand">
+        <span class="drop"></span><span id="brand">AquaPump</span>
+      </div>
+      <div class="nav-links">
+        <a href="/products" id="navProducts">Products</a>
+        <a href="/contact" id="navContact">Contact</a>
+      </div>
+      <div class="controls">
+        <button class="icon-btn" id="langToggle">EN</button>
+        <button class="icon-btn" id="themeToggle">☀️</button>
+        <a class="icon-btn" id="ctaQuote" href="/contact">Get Quote</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container">
+      <span class="eyebrow reveal" id="eyebrow">Precision • Reliability • Performance</span>
+      <h1 class="hero-title reveal" id="title">Your Pump, Our Solution</h1>
+      <p class="lead reveal" id="subtitle">
+        30+ years of excellence in water systems. From design to deployment — we deliver.
+      </p>
+      <div class="actions reveal">
+        <button class="btn btn-primary" id="primaryBtn">Explore Products</button>
+        <button class="btn btn-outline" id="secondaryBtn">Contact Sales</button>
+      </div>
+    </div>
+    <div class="wave"></div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <h2 class="reveal" id="expertiseTitle">Our Expertise</h2>
+        <div class="grid">
+          <article class="card reveal" id="card1">
+            <h3>Municipal & Infra</h3>
+            <p>Large-scale pumping stations, wastewater, pressure boosting & telemetry.</p>
+          </article>
+          <article class="card reveal" id="card2">
+            <h3>Industrial</h3>
+            <p>Process pumps, VFD optimization, energy audits & turnkey retrofits.</p>
+          </article>
+          <article class="card reveal" id="card3">
+            <h3>Agriculture</h3>
+            <p>Irrigation systems, fertigation, and high-efficiency multi-stage pumps.</p>
+          </article>
+        </div>
+
+        <div class="stats reveal">
+          <div class="stat" id="stat1"><div class="k">30+</div><div class="v">Years</div></div>
+          <div class="stat" id="stat2"><div class="k">1.2K</div><div class="v">Projects</div></div>
+          <div class="stat" id="stat3"><div class="k">24/7</div><div class="v">Support</div></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">© AquaPump. All rights reserved.</div>
+  </footer>
+
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
