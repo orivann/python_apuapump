@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Premium pumps and turnkey water systems for industry, agriculture, and infrastructure.">
+  <meta property="og:title" content="AquaPump">
+  <meta property="og:description" content="Industry-Leading Water Solutions">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#0b63f6">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><circle cx='32' cy='32' r='28' fill='%230b63f6'/><circle cx='26' cy='26' r='16' fill='%23fff'/></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <title>{% block title %}AquaPump{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  {% block head_extra %}{% endblock %}
+</head>
+<body data-page="{{ page_id | default('home') }}">
+  {% import 'components.html' as ui %}
+  {{ ui.nav(active_page=page_id | default('home')) }}
+  {% block hero %}{% endblock %}
+  <main class="page-main">
+    {% block content %}{% endblock %}
+  </main>
+  {{ ui.footer() }}
+  {{ ui.chatbot() }}
+  <script src="{{ url_for('static', filename='js/main.js') }}" defer></script>
+  {% block scripts %}{% endblock %}
+</body>
+</html>
