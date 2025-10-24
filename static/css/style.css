@@ -174,12 +174,24 @@ html.dark .nav {
   transform: translateY(-1px);
 }
 
-.brand__mark {
-  width: 32px;
-  height: 32px;
-  border-radius: 12px;
-  background: radial-gradient(circle at 30% 30%, var(--color-secondary), var(--color-primary));
-  box-shadow: inset 0 0 0 3px rgba(255, 255, 255, 0.2), 0 8px 20px rgba(37, 99, 235, 0.25);
+.brand__logo {
+  display: block;
+  width: 40px;
+  height: auto;
+  filter: drop-shadow(0 8px 20px rgba(37, 99, 235, 0.22));
+}
+
+.brand__logo--footer {
+  width: 36px;
+  filter: drop-shadow(0 6px 16px rgba(37, 99, 235, 0.16));
+}
+
+html.dark .brand__logo {
+  filter: drop-shadow(0 8px 20px rgba(96, 165, 250, 0.3));
+}
+
+html.dark .brand__logo--footer {
+  filter: drop-shadow(0 6px 16px rgba(96, 165, 250, 0.24));
 }
 
 .nav__toggle {

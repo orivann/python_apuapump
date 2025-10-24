@@ -17,7 +17,7 @@
 <nav class="nav" aria-label="Primary">
   <div class="container nav__inner">
     <a class="nav__brand" href="/" data-i18n-aria-label="header.brand_home">
-      <span class="brand__mark" aria-hidden="true"></span>
+      <img class="brand__logo" src="{{ url_for('static', filename='img/aquapump-logo.svg') }}" alt="AquaPump logo">
       <span class="nav__brand-label" id="brand" data-i18n="header.brand">AquaPump</span>
     </a>
     <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" data-i18n-aria-label="header.toggle_nav">
@@ -51,7 +51,7 @@
 <footer class="footer">
   <div class="container footer__inner">
     <div class="footer__brand">
-      <span class="brand__mark" aria-hidden="true"></span>
+      <img class="brand__logo brand__logo--footer" src="{{ url_for('static', filename='img/aquapump-logo.svg') }}" alt="AquaPump logo">
       <span data-i18n="footer.brand">AquaPump</span>
     </div>
     <div class="footer__meta" data-i18n="footer.copyright">© AquaPump. All rights reserved.</div>
