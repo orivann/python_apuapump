@@ -4,25 +4,25 @@
 <header class="hero hero--primary">
   <div class="container hero__inner">
     <div class="hero__content">
-      <span class="chip chip--accent" id="eyebrow">Industry-Leading Water Solutions</span>
-      <h1 class="hero__title" id="title">Your Pump, Our Solution</h1>
-      <p class="hero__lead" id="subtitle">30+ years of excellence in water system solutions. Leading provider of pumps for industry, agriculture, municipalities, and infrastructure.</p>
+      <span class="chip chip--accent" id="eyebrow" data-i18n="home.hero.chip">Industry-Leading Water Solutions</span>
+      <h1 class="hero__title" id="title" data-i18n="home.hero.title">Your Pump, Our Solution</h1>
+      <p class="hero__lead" id="subtitle" data-i18n="home.hero.subtitle">30+ years of excellence in water system solutions. Leading provider of pumps for industry, agriculture, municipalities, and infrastructure.</p>
       <div class="hero__actions">
-        {{ ui.button('Our Products', variant='primary', href='/products', id='primaryBtn') }}
-        {{ ui.button('Get Quote', variant='outline', href='/contact', id='secondaryBtn') }}
+        {{ ui.button('Our Products', variant='primary', href='/products', id='primaryBtn', translation_key='home.hero.primary') }}
+        {{ ui.button('Get Quote', variant='outline', href='/contact', id='secondaryBtn', translation_key='home.hero.secondary') }}
       </div>
     </div>
     <div class="hero__media" role="presentation">
       <div class="hero__orb" aria-hidden="true"></div>
       <div class="hero__mesh" aria-hidden="true"></div>
-      <div class="hero__badge">Trusted by 1.2K+ projects worldwide</div>
+      <div class="hero__badge" data-i18n="home.hero.badge">Trusted by 1.2K+ projects worldwide</div>
       <div class="hero__floating hero__floating--primary">
-        <p class="hero__floating-label">Response Time</p>
-        <p class="hero__floating-value">15m avg</p>
+        <p class="hero__floating-label" data-i18n="home.hero.floating_primary_label">Response Time</p>
+        <p class="hero__floating-value" data-i18n="home.hero.floating_primary_value">15m avg</p>
       </div>
       <div class="hero__floating hero__floating--secondary">
-        <p class="hero__floating-label">Energy Savings</p>
-        <p class="hero__floating-value">▲ 30%</p>
+        <p class="hero__floating-label" data-i18n="home.hero.floating_secondary_label">Energy Savings</p>
+        <p class="hero__floating-value" data-i18n="home.hero.floating_secondary_value">▲ 30%</p>
       </div>
       <div class="hero__glow"></div>
     </div>
@@ -32,9 +32,9 @@
 {% endblock %}
 
 {% block content %}
-<section class="section section--subtle" aria-label="Trusted partners">
+<section class="section section--subtle" aria-label="Trusted partners" data-i18n-aria-label="home.brands.aria_label">
   <div class="container section__inner section__inner--brands">
-    <span class="chip chip--ghost section__badge">Trusted by innovators</span>
+    <span class="chip chip--ghost section__badge" data-i18n="home.brands.badge">Trusted by innovators</span>
     <ul class="brand-strip">
       <li>Veolia</li>
       <li>Suez</li>
@@ -49,19 +49,19 @@
 <section class="section" id="technology">
   <div class="container section__inner">
     <div class="section__header">
-      <span class="chip chip--ghost">Expertise</span>
-      <h2 class="section__title" id="expertiseTitle">Our Expertise</h2>
-      <p class="section__lead" id="expertiseLead">Precision engineering, digital monitoring, and lifecycle support to keep critical systems running.</p>
+      <span class="chip chip--ghost" data-i18n="home.sections.expertise_chip">Expertise</span>
+      <h2 class="section__title" id="expertiseTitle" data-i18n="home.sections.expertise_title">Our Expertise</h2>
+      <p class="section__lead" id="expertiseLead" data-i18n="home.sections.expertise_lead">Precision engineering, digital monitoring, and lifecycle support to keep critical systems running.</p>
     </div>
     <div class="feature-grid">
-      {{ ui.feature_card(1, 'Municipal & Infra', 'Large-scale pumping stations, wastewater, pressure boosting & telemetry.') }}
-      {{ ui.feature_card(2, 'Industrial', 'Process pumps, VFD optimization, energy audits & turnkey retrofits.') }}
-      {{ ui.feature_card(3, 'Agriculture', 'Irrigation systems, fertigation, and high-efficiency multi-stage pumps.') }}
+      {{ ui.feature_card(1, 'Municipal & Infra', 'Large-scale pumping stations, wastewater, pressure boosting & telemetry.', translation_key='home.sections.cards.0') }}
+      {{ ui.feature_card(2, 'Industrial', 'Process pumps, VFD optimization, energy audits & turnkey retrofits.', translation_key='home.sections.cards.1') }}
+      {{ ui.feature_card(3, 'Agriculture', 'Irrigation systems, fertigation, and high-efficiency multi-stage pumps.', translation_key='home.sections.cards.2') }}
     </div>
     <div class="stat-bar">
-      {{ ui.stat_block(1, '30+', 'Years') }}
-      {{ ui.stat_block(2, '1.2K', 'Projects') }}
-      {{ ui.stat_block(3, '24/7', 'Support') }}
+      {{ ui.stat_block(1, '30+', 'Years', translation_key='home.sections.stats.0') }}
+      {{ ui.stat_block(2, '1.2K', 'Projects', translation_key='home.sections.stats.1') }}
+      {{ ui.stat_block(3, '24/7', 'Support', translation_key='home.sections.stats.2') }}
     </div>
   </div>
 </section>
@@ -69,22 +69,22 @@
 <section class="section section--surface" id="sustainability">
   <div class="container section__inner section__inner--split">
     <div>
-      <span class="chip chip--ghost">Sustainability</span>
-      <h2 class="section__title">Smarter Energy, Smaller Footprint</h2>
-      <p class="section__lead">Our pumps are designed to reduce energy consumption by up to 30%, integrating smart controls and remote diagnostics to minimize downtime and environmental impact.</p>
+      <span class="chip chip--ghost" data-i18n="home.sustainability.chip">Sustainability</span>
+      <h2 class="section__title" data-i18n="home.sustainability.title">Smarter Energy, Smaller Footprint</h2>
+      <p class="section__lead" data-i18n="home.sustainability.lead">Our pumps are designed to reduce energy consumption by up to 30%, integrating smart controls and remote diagnostics to minimize downtime and environmental impact.</p>
       <ul class="bullet-list">
-        <li>High-efficiency impellers and motors</li>
-        <li>Remote analytics and predictive maintenance</li>
-        <li>Certified sustainable manufacturing partners</li>
+        <li data-i18n="home.sustainability.bullets.0">High-efficiency impellers and motors</li>
+        <li data-i18n="home.sustainability.bullets.1">Remote analytics and predictive maintenance</li>
+        <li data-i18n="home.sustainability.bullets.2">Certified sustainable manufacturing partners</li>
       </ul>
       <div class="hero__actions">
-        {{ ui.button('View Technology', variant='ghost', href='/products#technology') }}
+        {{ ui.button('View Technology', variant='ghost', href='/products#technology', translation_key='home.sustainability.cta') }}
       </div>
     </div>
     <div class="sustainability-card" role="presentation">
       <div class="sustainability-card__inner">
-        <p class="sustainability-card__metric">18%</p>
-        <p class="sustainability-card__caption">Average efficiency gains vs. legacy systems</p>
+        <p class="sustainability-card__metric" data-i18n="home.sustainability.metric">18%</p>
+        <p class="sustainability-card__caption" data-i18n="home.sustainability.caption">Average efficiency gains vs. legacy systems</p>
         <div class="sustainability-card__wave" aria-hidden="true"></div>
       </div>
     </div>

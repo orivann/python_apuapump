@@ -1,14 +1,14 @@
-{% macro button(label, variant='primary', href=None, id=None, icon=None) %}
+{% macro button(label, variant='primary', href=None, id=None, icon=None, translation_key=None) %}
   {% set classes = 'btn btn--' + variant %}
   {% if href %}
     <a class="{{ classes }}" href="{{ href }}" {% if id %}id="{{ id }}"{% endif %}>
       {% if icon %}<span class="btn__icon" aria-hidden="true">{{ icon }}</span>{% endif %}
-      <span>{{ label }}</span>
+      <span {% if translation_key %}data-i18n="{{ translation_key }}"{% endif %}>{{ label }}</span>
     </a>
   {% else %}
     <button class="{{ classes }}" type="button" {% if id %}id="{{ id }}"{% endif %}>
       {% if icon %}<span class="btn__icon" aria-hidden="true">{{ icon }}</span>{% endif %}
-      <span>{{ label }}</span>
+      <span {% if translation_key %}data-i18n="{{ translation_key }}"{% endif %}>{{ label }}</span>
     </button>
   {% endif %}
 {% endmacro %}
@@ -16,31 +16,31 @@
 {% macro nav(active_page='home') %}
 <nav class="nav" aria-label="Primary">
   <div class="container nav__inner">
-    <a class="nav__brand" href="/" aria-label="AquaPump home">
+    <a class="nav__brand" href="/" data-i18n-aria-label="header.brand_home">
       <span class="brand__mark" aria-hidden="true"></span>
-      <span class="nav__brand-label" id="brand">AquaPump</span>
+      <span class="nav__brand-label" id="brand" data-i18n="header.brand">AquaPump</span>
     </a>
-    <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu">
-      <span class="visually-hidden">Toggle navigation</span>
+    <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" data-i18n-aria-label="header.toggle_nav">
+      <span class="visually-hidden" data-i18n="header.toggle_nav">Toggle navigation</span>
       <span class="nav__toggle-bar"></span>
       <span class="nav__toggle-bar"></span>
       <span class="nav__toggle-bar"></span>
     </button>
     <div class="nav__menu" id="navMenu">
       <ul class="nav__links" role="list">
-        <li><a href="/products" id="navProducts" class="nav__link {% if active_page == 'products' %}is-active{% endif %}">Products</a></li>
-        <li><a href="/#technology" id="navTechnology" class="nav__link nav__link--anchor">Technology</a></li>
-        <li><a href="/#sustainability" id="navSustainability" class="nav__link nav__link--anchor">Sustainability</a></li>
-        <li><a href="/contact" id="navContact" class="nav__link {% if active_page == 'contact' %}is-active{% endif %}">Contact</a></li>
+        <li><a href="/products" id="navProducts" class="nav__link {% if active_page == 'products' %}is-active{% endif %}" data-i18n="header.nav_products">Products</a></li>
+        <li><a href="/#technology" id="navTechnology" class="nav__link nav__link--anchor" data-i18n="header.nav_technology">Technology</a></li>
+        <li><a href="/#sustainability" id="navSustainability" class="nav__link nav__link--anchor" data-i18n="header.nav_sustainability">Sustainability</a></li>
+        <li><a href="/contact" id="navContact" class="nav__link {% if active_page == 'contact' %}is-active{% endif %}" data-i18n="header.nav_contact">Contact</a></li>
       </ul>
       <div class="nav__controls">
-        <div class="nav__toggles" role="group" aria-label="Preferences">
-          <button class="nav__chip" id="themeToggle" type="button" aria-label="Toggle theme">
+        <div class="nav__toggles" role="group" data-i18n-aria-label="header.preferences">
+          <button class="nav__chip" id="themeToggle" type="button">
             <span aria-hidden="true" data-theme-icon>☀️</span>
           </button>
-          <button class="nav__chip nav__chip--lang" id="langToggle" type="button" aria-label="Toggle language">EN</button>
+          <button class="nav__chip nav__chip--lang" id="langToggle" type="button" data-i18n-aria-label="header.toggle_lang">EN</button>
         </div>
-        <a class="btn btn--primary btn--xl" id="ctaQuote" href="/contact">Get Quote</a>
+        <a class="btn btn--primary btn--xl" id="ctaQuote" href="/contact" data-i18n="header.cta_quote">Get Quote</a>
       </div>
     </div>
   </div>
@@ -52,55 +52,55 @@
   <div class="container footer__inner">
     <div class="footer__brand">
       <span class="brand__mark" aria-hidden="true"></span>
-      <span>AquaPump</span>
+      <span data-i18n="footer.brand">AquaPump</span>
     </div>
-    <div class="footer__meta">© AquaPump. All rights reserved.</div>
+    <div class="footer__meta" data-i18n="footer.copyright">© AquaPump. All rights reserved.</div>
   </div>
 </footer>
 {% endmacro %}
 
-{% macro feature_card(idx, title, body) %}
+{% macro feature_card(idx, title, body, translation_key=None) %}
 <article class="feature" id="card{{ idx }}">
   <div class="feature__header">
     <span class="feature__index">0{{ idx }}</span>
-    <h3>{{ title }}</h3>
+    <h3 {% if translation_key %}data-i18n="{{ translation_key }}.title"{% endif %}>{{ title }}</h3>
   </div>
-  <p>{{ body }}</p>
-  <span class="feature__cta" aria-hidden="true">Explore →</span>
+  <p {% if translation_key %}data-i18n="{{ translation_key }}.desc"{% endif %}>{{ body }}</p>
+  <span class="feature__cta" aria-hidden="true" {% if translation_key %}data-i18n="{{ translation_key }}.cta"{% endif %}>Explore →</span>
 </article>
 {% endmacro %}
 
-{% macro stat_block(idx, value, label) %}
+{% macro stat_block(idx, value, label, translation_key=None) %}
 <div class="stat" id="stat{{ idx }}">
-  <div class="stat__value">{{ value }}</div>
-  <div class="stat__label">{{ label }}</div>
+  <div class="stat__value" {% if translation_key %}data-i18n="{{ translation_key }}.k"{% endif %}>{{ value }}</div>
+  <div class="stat__label" {% if translation_key %}data-i18n="{{ translation_key }}.v"{% endif %}>{{ label }}</div>
 </div>
 {% endmacro %}
 
 {% macro chatbot() %}
 <div class="chatbot" data-state="closed">
-  <button class="chatbot__toggle" id="chatToggle" type="button" aria-expanded="false" aria-controls="chatWindow">
+  <button class="chatbot__toggle" id="chatToggle" type="button" aria-expanded="false" aria-controls="chatWindow" data-i18n-aria-label="chat.toggle_label">
     <span class="chatbot__toggle-icon" aria-hidden="true">💬</span>
-    <span class="visually-hidden">Chat with us</span>
+    <span class="visually-hidden" data-i18n="chat.toggle_label">Chat with us</span>
   </button>
   <section class="chatbot__window" id="chatWindow" aria-live="polite" aria-hidden="true">
     <header class="chatbot__header">
       <div>
-        <p class="chatbot__title">AquaBot</p>
-        <p class="chatbot__subtitle">How can we help?</p>
+        <p class="chatbot__title" id="chatbotTitle" data-i18n="chat.title">AquaBot</p>
+        <p class="chatbot__subtitle" id="chatbotSubtitle" data-i18n="chat.subtitle">How can we help?</p>
       </div>
-      <button class="chatbot__close" id="chatClose" type="button" aria-label="Close chat">×</button>
+      <button class="chatbot__close" id="chatClose" type="button" data-i18n-aria-label="chat.close">×</button>
     </header>
     <div class="chatbot__messages" id="chatMessages">
       <div class="message message--bot">
-        <p>Hi! I’m AquaBot. Ask me about products, quotes, or support.</p>
-        <span class="message__time">Online now</span>
+        <p id="chatIntro" data-i18n="chat.intro">Hi! I’m AquaBot. Ask me about products, quotes, or support.</p>
+        <span class="message__time" id="chatStatus" data-i18n="chat.status">Online now</span>
       </div>
     </div>
     <form class="chatbot__form" id="chatForm">
-      <label class="visually-hidden" for="chatInput">Type your message</label>
-      <input class="chatbot__input" id="chatInput" name="chat" placeholder="Type a message…" autocomplete="off" />
-      <button class="chatbot__send" type="submit">Send</button>
+      <label class="visually-hidden" for="chatInput" data-i18n="chat.placeholder">Type your message</label>
+      <input class="chatbot__input" id="chatInput" name="chat" placeholder="Type a message…" autocomplete="off" data-i18n-placeholder="chat.placeholder" />
+      <button class="chatbot__send" type="submit" data-i18n="chat.send">Send</button>
     </form>
   </section>
 </div>

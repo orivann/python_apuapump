@@ -6,9 +6,9 @@
 <header class="hero hero--subpage">
   <div class="container hero__inner">
     <div class="hero__content">
-      <span class="chip chip--ghost">Let’s talk</span>
-      <h1 class="hero__title" id="contactTitle">Contact Us</h1>
-      <p class="hero__lead">Tell us about your project. We’ll reply within one business day.</p>
+      <span class="chip chip--ghost" data-i18n="contact.chip">Let’s talk</span>
+      <h1 class="hero__title" id="contactTitle" data-i18n="contact.title">Contact Us</h1>
+      <p class="hero__lead" data-i18n="contact.lead">Tell us about your project. We’ll reply within one business day.</p>
     </div>
   </div>
   <div class="hero__wave" aria-hidden="true"></div>
@@ -20,27 +20,27 @@
   <div class="container section__inner section__inner--narrow">
     <form class="form" id="contactForm" novalidate>
       <div class="form__field">
-        <label class="form__label" id="nameLabel" for="name">Full Name</label>
-        <input class="input" id="name" name="name" placeholder="Your full name" required />
-        <p class="form__error" data-field="name">Please enter your full name.</p>
+        <label class="form__label" id="nameLabel" for="name" data-i18n="contact.form.name_label">Full Name</label>
+        <input class="input" id="name" name="name" placeholder="Your full name" required data-i18n-placeholder="contact.form.placeholders.name" />
+        <p class="form__error" data-field="name" data-i18n="contact.form.errors.name">Please enter your full name.</p>
       </div>
       <div class="form__field">
-        <label class="form__label" id="phoneLabel" for="phone">Phone</label>
-        <input class="input" id="phone" name="phone" type="tel" inputmode="tel" placeholder="+972 50-123-4567" required />
-        <p class="form__error" data-field="phone">Add the best number to reach you.</p>
+        <label class="form__label" id="phoneLabel" for="phone" data-i18n="contact.form.phone_label">Phone</label>
+        <input class="input" id="phone" name="phone" type="tel" inputmode="tel" placeholder="+972 50-123-4567" required data-i18n-placeholder="contact.form.placeholders.phone" />
+        <p class="form__error" data-field="phone" data-i18n="contact.form.errors.phone">Add the best number to reach you.</p>
       </div>
       <div class="form__field">
-        <label class="form__label" id="emailLabel" for="email">Email</label>
-        <input class="input" id="email" name="email" type="email" placeholder="you@company.com" required />
-        <p class="form__error" data-field="email">Enter a valid email address.</p>
+        <label class="form__label" id="emailLabel" for="email" data-i18n="contact.form.email_label">Email</label>
+        <input class="input" id="email" name="email" type="email" placeholder="you@company.com" required data-i18n-placeholder="contact.form.placeholders.email" />
+        <p class="form__error" data-field="email" data-i18n="contact.form.errors.email">Enter a valid email address.</p>
       </div>
       <div class="form__field">
-        <label class="form__label" id="messageLabel" for="message">Message</label>
-        <textarea class="textarea" id="message" name="message" placeholder="Tell us about your project"></textarea>
-        <p class="form__error" data-field="message">Share a few details so we can help.</p>
+        <label class="form__label" id="messageLabel" for="message" data-i18n="contact.form.message_label">Message</label>
+        <textarea class="textarea" id="message" name="message" placeholder="Tell us about your project" data-i18n-placeholder="contact.form.placeholders.message"></textarea>
+        <p class="form__error" data-field="message" data-i18n="contact.form.errors.message">Share a few details so we can help.</p>
       </div>
       <div class="form__actions">
-        <button type="submit" class="btn btn--primary" id="sendBtn">Send</button>
+        <button type="submit" class="btn btn--primary" id="sendBtn" data-i18n="contact.form.submit">Send</button>
       </div>
     </form>
   </div>
