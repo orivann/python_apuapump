@@ -1,138 +1,91 @@
 {% extends 'base.html' %}
 {% import 'components.html' as ui %}
 {% block hero %}
-<header class="hero hero--guidelines">
+<header class="hero hero--primary">
   <div class="container hero__inner">
-    <img class="guidelines__logo" src="{{ url_for('static', filename='img/aquapump-logo.svg') }}" alt="AquaPump logo mark">
-    <span class="hero__eyebrow" id="eyebrow" data-i18n="home.hero.chip">Brand Playbook</span>
-    <h1 class="hero__title" id="title" data-i18n="home.hero.title">AquaPump Identity System</h1>
-    <p class="hero__lead" id="subtitle" data-i18n="home.hero.subtitle">A focused guide to color, typography, and logo usage so every touchpoint feels unmistakably AquaPump.</p>
-    <div class="hero__actions">
-      {{ ui.button('Explore Colors', variant='primary', href='/#colors', id='primaryBtn', translation_key='home.hero.primary') }}
-      {{ ui.button('Contact Team', variant='outline', href='/contact', id='secondaryBtn', translation_key='home.hero.secondary') }}
+    <div class="hero__content">
+      <span class="chip chip--accent" id="eyebrow" data-i18n="home.hero.chip">Industry-Leading Water Solutions</span>
+      <h1 class="hero__title" id="title" data-i18n="home.hero.title">Your Pump, Our Solution</h1>
+      <p class="hero__lead" id="subtitle" data-i18n="home.hero.subtitle">30+ years of excellence in water system solutions. Leading provider of pumps for industry, agriculture, municipalities, and infrastructure.</p>
+      <div class="hero__actions">
+        {{ ui.button('Our Products', variant='primary', href='/products', id='primaryBtn', translation_key='home.hero.primary') }}
+        {{ ui.button('Get Quote', variant='outline', href='/contact', id='secondaryBtn', translation_key='home.hero.secondary') }}
+      </div>
+    </div>
+    <div class="hero__media" role="presentation">
+      <div class="hero__orb" aria-hidden="true"></div>
+      <div class="hero__mesh" aria-hidden="true"></div>
+      <div class="hero__badge" data-i18n="home.hero.badge">Trusted by 1.2K+ projects worldwide</div>
+      <div class="hero__floating hero__floating--primary">
+        <p class="hero__floating-label" data-i18n="home.hero.floating_primary_label">Response Time</p>
+        <p class="hero__floating-value" data-i18n="home.hero.floating_primary_value">15m avg</p>
+      </div>
+      <div class="hero__floating hero__floating--secondary">
+        <p class="hero__floating-label" data-i18n="home.hero.floating_secondary_label">Energy Savings</p>
+        <p class="hero__floating-value" data-i18n="home.hero.floating_secondary_value">▲ 30%</p>
+      </div>
+      <div class="hero__glow"></div>
     </div>
   </div>
+  <div class="hero__wave" aria-hidden="true"></div>
 </header>
 {% endblock %}
 
 {% block content %}
-<section class="guideline-section guideline-section--soft" id="colors">
-  <div class="guideline-section__inner">
-    <div class="guideline-section__header">
-      <span class="chip chip--ghost" data-i18n="home.colors.chip">Your Colors</span>
-      <h2 class="guideline-section__title" data-i18n="home.colors.title">Color System</h2>
-      <p class="guideline-section__lead" data-i18n="home.colors.lead">These hues express the clarity, freshness, and reliability at the heart of AquaPump. Use them confidently and consistently.</p>
+<section class="section section--subtle" aria-label="Trusted partners" data-i18n-aria-label="home.brands.aria_label">
+  <div class="container section__inner section__inner--brands">
+    <span class="chip chip--ghost section__badge" data-i18n="home.brands.badge">Trusted by innovators</span>
+    <ul class="brand-strip">
+      <li>Veolia</li>
+      <li>Suez</li>
+      <li>Mekorot</li>
+      <li>BlueRiver</li>
+      <li>PureFlow</li>
+      <li>AquaCity</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section" id="technology">
+  <div class="container section__inner">
+    <div class="section__header">
+      <span class="chip chip--ghost" data-i18n="home.sections.expertise_chip">Expertise</span>
+      <h2 class="section__title" id="expertiseTitle" data-i18n="home.sections.expertise_title">Our Expertise</h2>
+      <p class="section__lead" id="expertiseLead" data-i18n="home.sections.expertise_lead">Precision engineering, digital monitoring, and lifecycle support to keep critical systems running.</p>
     </div>
-    <div class="palette-grid">
-      <article class="color-card" style="--swatch: #0B63F6;">
-        <div class="color-card__swatch" aria-hidden="true"></div>
-        <span class="color-card__label" data-i18n="home.colors.cards.0.label">Primary</span>
-        <p class="color-card__value" data-i18n="home.colors.cards.0.name">AquaPump Blue</p>
-        <p class="color-card__note" data-i18n="home.colors.cards.0.note">HEX #0B63F6 · RGB 11 99 246 — Hero backgrounds, navigation, and core CTAs.</p>
-      </article>
-      <article class="color-card" style="--swatch: #12B4FF;">
-        <div class="color-card__swatch" aria-hidden="true"></div>
-        <span class="color-card__label" data-i18n="home.colors.cards.1.label">Accent</span>
-        <p class="color-card__value" data-i18n="home.colors.cards.1.name">Cascade Aqua</p>
-        <p class="color-card__note" data-i18n="home.colors.cards.1.note">HEX #12B4FF · RGB 18 180 255 — Gradients, highlights, and informational chips.</p>
-      </article>
-      <article class="color-card" style="--swatch: #102542;">
-        <div class="color-card__swatch" aria-hidden="true"></div>
-        <span class="color-card__label" data-i18n="home.colors.cards.2.label">Foundation</span>
-        <p class="color-card__value" data-i18n="home.colors.cards.2.name">Deep Marine</p>
-        <p class="color-card__note" data-i18n="home.colors.cards.2.note">HEX #102542 · RGB 16 37 66 — Headlines, body copy, and contrast against light surfaces.</p>
-      </article>
-      <article class="color-card" style="--swatch: #2BB673;">
-        <div class="color-card__swatch" aria-hidden="true"></div>
-        <span class="color-card__label" data-i18n="home.colors.cards.3.label">Energy</span>
-        <p class="color-card__value" data-i18n="home.colors.cards.3.name">Hydro Green</p>
-        <p class="color-card__note" data-i18n="home.colors.cards.3.note">HEX #2BB673 · RGB 43 182 115 — Sustainability messages, success states, and data wins.</p>
-      </article>
+    <div class="feature-grid">
+      {{ ui.feature_card(1, 'Municipal & Infra', 'Large-scale pumping stations, wastewater, pressure boosting & telemetry.', translation_key='home.sections.cards.0') }}
+      {{ ui.feature_card(2, 'Industrial', 'Process pumps, VFD optimization, energy audits & turnkey retrofits.', translation_key='home.sections.cards.1') }}
+      {{ ui.feature_card(3, 'Agriculture', 'Irrigation systems, fertigation, and high-efficiency multi-stage pumps.', translation_key='home.sections.cards.2') }}
+    </div>
+    <div class="stat-bar">
+      {{ ui.stat_block(1, '30+', 'Years', translation_key='home.sections.stats.0') }}
+      {{ ui.stat_block(2, '1.2K', 'Projects', translation_key='home.sections.stats.1') }}
+      {{ ui.stat_block(3, '24/7', 'Support', translation_key='home.sections.stats.2') }}
     </div>
   </div>
 </section>
 
-<section class="guideline-section" id="typography">
-  <div class="guideline-section__inner">
-    <div class="guideline-section__header">
-      <span class="chip chip--ghost" data-i18n="home.type.chip">Typography</span>
-      <h2 class="guideline-section__title" data-i18n="home.type.title">Typeface Pairing</h2>
-      <p class="guideline-section__lead" data-i18n="home.type.lead">Lean on bold, confident typography to balance engineering precision with brand warmth.</p>
-    </div>
-    <div class="typography-grid">
-      <article class="type-specimen type-specimen--primary">
-        <p class="type-specimen__label" data-i18n="home.type.cards.0.label">Display</p>
-        <p class="type-specimen__meta" data-i18n="home.type.cards.0.meta">Manrope — 700/800</p>
-        <p class="type-specimen__heading" data-i18n="home.type.cards.0.heading">AQUAPUMP</p>
-        <p class="type-specimen__body" data-i18n="home.type.cards.0.body">Use for hero titles, section headlines, and prominent numbers. Tight tracking and uppercase deliver strength.</p>
-      </article>
-      <article class="type-specimen type-specimen--secondary">
-        <p class="type-specimen__label" data-i18n="home.type.cards.1.label">Support</p>
-        <p class="type-specimen__meta" data-i18n="home.type.cards.1.meta">Manrope — 400/500</p>
-        <p class="type-specimen__heading" data-i18n="home.type.cards.1.heading">Sifonn Pro</p>
-        <p class="type-specimen__body" data-i18n="home.type.cards.1.body">Pair with lighter weights for body copy, captions, and multilingual content. Generous line-height keeps long-form easy to scan.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section class="guideline-section guideline-section--soft" id="usage">
-  <div class="guideline-section__inner">
-    <div class="guideline-section__header">
-      <span class="chip chip--ghost" data-i18n="home.usage.chip">Application</span>
-      <h2 class="guideline-section__title" data-i18n="home.usage.title">Bring It To Life</h2>
-      <p class="guideline-section__lead" data-i18n="home.usage.lead">From print collateral to the web, keep layouts bright, spacious, and anchored by the AquaPump drop.</p>
-    </div>
-    <div class="usage-grid">
-      <article class="usage-card">
-        <div class="usage-card__icon" aria-hidden="true">🎯</div>
-        <h3 class="usage-card__title" data-i18n="home.usage.cards.0.title">Logo Clearspace</h3>
-        <p class="usage-card__body" data-i18n="home.usage.cards.0.body">Preserve one full logomark radius on all sides. Use the blue circle on light grounds and the white knockout on deep marine.</p>
-      </article>
-      <article class="usage-card">
-        <div class="usage-card__icon" aria-hidden="true">📐</div>
-        <h3 class="usage-card__title" data-i18n="home.usage.cards.1.title">Grid & Balance</h3>
-        <p class="usage-card__body" data-i18n="home.usage.cards.1.body">Align content to a centered column. Pair gradients with soft shadows to echo the flow of water and kinetic energy.</p>
-      </article>
-      <article class="usage-card">
-        <div class="usage-card__icon" aria-hidden="true">💬</div>
-        <h3 class="usage-card__title" data-i18n="home.usage.cards.2.title">Voice & Tone</h3>
-        <p class="usage-card__body" data-i18n="home.usage.cards.2.body">Write with clarity and optimism. Highlight measurable impact, service reliability, and sustainable innovation.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section class="guideline-section" id="logo">
-  <div class="guideline-section__inner">
-    <div class="guideline-section__header">
-      <span class="chip chip--ghost" data-i18n="home.logo.chip">Logo</span>
-      <h2 class="guideline-section__title" data-i18n="home.logo.title">Signature Mark</h2>
-      <p class="guideline-section__lead" data-i18n="home.logo.lead">Always keep the AquaPump drop crisp, centered, and breathing. Use these lockups for primary placements.</p>
-    </div>
-    <div class="logo-lockup">
-      <div class="logo-lockup__row">
-        <div class="logo-lockup__tile">
-          <img src="{{ url_for('static', filename='img/aquapump-logo.svg') }}" alt="AquaPump logo on light">
-          <p class="logo-lockup__title" data-i18n="home.logo.cards.0.title">Light Background</p>
-          <p class="logo-lockup__caption" data-i18n="home.logo.cards.0.caption">Use the full-color mark with subtle shadowing to keep edges sharp.</p>
-        </div>
-        <div class="logo-lockup__tile logo-lockup__tile--dark">
-          <img src="{{ url_for('static', filename='img/aquapump-logo.svg') }}" alt="AquaPump logo on dark">
-          <p class="logo-lockup__title" data-i18n="home.logo.cards.1.title">Dark Background</p>
-          <p class="logo-lockup__caption" data-i18n="home.logo.cards.1.caption">Knock out the wordmark to white and retain the aqua ring to preserve contrast.</p>
-        </div>
+<section class="section section--surface" id="sustainability">
+  <div class="container section__inner section__inner--split">
+    <div>
+      <span class="chip chip--ghost" data-i18n="home.sustainability.chip">Sustainability</span>
+      <h2 class="section__title" data-i18n="home.sustainability.title">Smarter Energy, Smaller Footprint</h2>
+      <p class="section__lead" data-i18n="home.sustainability.lead">Our pumps are designed to reduce energy consumption by up to 30%, integrating smart controls and remote diagnostics to minimize downtime and environmental impact.</p>
+      <ul class="bullet-list">
+        <li data-i18n="home.sustainability.bullets.0">High-efficiency impellers and motors</li>
+        <li data-i18n="home.sustainability.bullets.1">Remote analytics and predictive maintenance</li>
+        <li data-i18n="home.sustainability.bullets.2">Certified sustainable manufacturing partners</li>
+      </ul>
+      <div class="hero__actions">
+        {{ ui.button('View Technology', variant='ghost', href='/products#technology', translation_key='home.sustainability.cta') }}
       </div>
-      <div class="logo-lockup__row">
-        <div class="logo-lockup__tile">
-          <p class="logo-lockup__title" data-i18n="home.logo.cards.2.title">Icon-Only</p>
-          <p class="logo-lockup__caption" data-i18n="home.logo.cards.2.caption">The droplet symbol can act as a favicon or social avatar. Minimum size 32px.</p>
-        </div>
-        <div class="logo-lockup__tile">
-          <p class="logo-lockup__title" data-i18n="home.logo.cards.3.title">Download Assets</p>
-          <p class="logo-lockup__caption" data-i18n="home.logo.cards.3.caption">Need files? Save the SVG for print-perfect scaling across media.</p>
-          <a class="btn btn--ghost" href="{{ url_for('static', filename='img/aquapump-logo.svg') }}" download data-i18n="home.logo.cards.3.cta">Download SVG</a>
-        </div>
+    </div>
+    <div class="sustainability-card" role="presentation">
+      <div class="sustainability-card__inner">
+        <p class="sustainability-card__metric" data-i18n="home.sustainability.metric">18%</p>
+        <p class="sustainability-card__caption" data-i18n="home.sustainability.caption">Average efficiency gains vs. legacy systems</p>
+        <div class="sustainability-card__wave" aria-hidden="true"></div>
       </div>
     </div>
   </div>

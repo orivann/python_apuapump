@@ -17,7 +17,7 @@
 <nav class="nav" aria-label="Primary">
   <div class="container nav__inner">
     <a class="nav__brand" href="/" data-i18n-aria-label="header.brand_home">
-      <img class="brand__logo" src="{{ url_for('static', filename='img/aquapump-logo.svg') }}" alt="AquaPump logo">
+      <span class="brand__mark" aria-hidden="true"></span>
       <span class="nav__brand-label" id="brand" data-i18n="header.brand">AquaPump</span>
     </a>
     <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" data-i18n-aria-label="header.toggle_nav">
@@ -28,9 +28,9 @@
     </button>
     <div class="nav__menu" id="navMenu">
       <ul class="nav__links" role="list">
-        <li><a href="/#colors" id="navColors" class="nav__link nav__link--anchor" data-i18n="header.nav_products">Color System</a></li>
-        <li><a href="/#typography" id="navTypography" class="nav__link nav__link--anchor" data-i18n="header.nav_technology">Typography</a></li>
-        <li><a href="/#usage" id="navUsage" class="nav__link nav__link--anchor" data-i18n="header.nav_sustainability">Usage</a></li>
+        <li><a href="/products" id="navProducts" class="nav__link {% if active_page == 'products' %}is-active{% endif %}" data-i18n="header.nav_products">Products</a></li>
+        <li><a href="/#technology" id="navTechnology" class="nav__link nav__link--anchor" data-i18n="header.nav_technology">Technology</a></li>
+        <li><a href="/#sustainability" id="navSustainability" class="nav__link nav__link--anchor" data-i18n="header.nav_sustainability">Sustainability</a></li>
         <li><a href="/contact" id="navContact" class="nav__link {% if active_page == 'contact' %}is-active{% endif %}" data-i18n="header.nav_contact">Contact</a></li>
       </ul>
       <div class="nav__controls">
@@ -40,7 +40,7 @@
           </button>
           <button class="nav__chip nav__chip--lang" id="langToggle" type="button" data-i18n-aria-label="header.toggle_lang">EN</button>
         </div>
-        <a class="btn btn--primary btn--xl" id="ctaQuote" href="/contact" data-i18n="header.cta_quote">Contact Team</a>
+        <a class="btn btn--primary btn--xl" id="ctaQuote" href="/contact" data-i18n="header.cta_quote">Get Quote</a>
       </div>
     </div>
   </div>
@@ -51,7 +51,7 @@
 <footer class="footer">
   <div class="container footer__inner">
     <div class="footer__brand">
-      <img class="brand__logo brand__logo--footer" src="{{ url_for('static', filename='img/aquapump-logo.svg') }}" alt="AquaPump logo">
+      <span class="brand__mark" aria-hidden="true"></span>
       <span data-i18n="footer.brand">AquaPump</span>
     </div>
     <div class="footer__meta" data-i18n="footer.copyright">© AquaPump. All rights reserved.</div>
