@@ -5,57 +5,150 @@
   },
   "header": {
     "brand": "AquaPump",
+    "brand_home": "AquaPump home",
     "nav_products": "Products",
+    "nav_technology": "Technology",
+    "nav_sustainability": "Sustainability",
     "nav_contact": "Contact",
-    "cta_quote": "Get Quote"
+    "cta_quote": "Get Quote",
+    "toggle_nav": "Toggle navigation",
+    "toggle_lang": "Toggle language",
+    "preferences": "Preferences",
+    "toggle_theme": {
+      "dark": "Switch to dark theme",
+      "light": "Switch to light theme"
+    }
   },
-  "hero": {
-    "eyebrow": "Precision • Reliability • Performance",
-    "title": "Your Pump, Our Solution",
-    "subtitle": "30+ years of excellence in water systems. From design to deployment — we deliver.",
-    "primary": "Explore Products",
-    "secondary": "Contact Sales"
+  "footer": {
+    "brand": "AquaPump",
+    "copyright": "© AquaPump. All rights reserved."
   },
-  "sections": {
-    "expertise": "Our Expertise",
-    "lead": "Precision engineering, digital monitoring, and lifecycle support to keep critical systems running.",
-    "cards": [
+  "home": {
+    "hero": {
+      "chip": "Industry-Leading Water Solutions",
+      "title": "Your Pump, Our Solution",
+      "subtitle": "30+ years of excellence in water system solutions. Leading provider of pumps for industry, agriculture, municipalities, and infrastructure.",
+      "primary": "Our Products",
+      "secondary": "Get Quote",
+      "badge": "Trusted by 1.2K+ projects worldwide",
+      "floating_primary_label": "Response Time",
+      "floating_primary_value": "15m avg",
+      "floating_secondary_label": "Energy Savings",
+      "floating_secondary_value": "▲ 30%"
+    },
+    "brands": {
+      "badge": "Trusted by innovators",
+      "aria_label": "Trusted partners"
+    },
+    "sections": {
+      "expertise_chip": "Expertise",
+      "expertise_title": "Our Expertise",
+      "expertise_lead": "Precision engineering, digital monitoring, and lifecycle support to keep critical systems running.",
+      "cards": [
+        {
+          "title": "Municipal & Infra",
+          "desc": "Large-scale pumping stations, wastewater, pressure boosting & telemetry.",
+          "cta": "Explore →"
+        },
+        {
+          "title": "Industrial",
+          "desc": "Process pumps, VFD optimization, energy audits & turnkey retrofits.",
+          "cta": "Explore →"
+        },
+        {
+          "title": "Agriculture",
+          "desc": "Irrigation systems, fertigation, and high-efficiency multi-stage pumps.",
+          "cta": "Explore →"
+        }
+      ],
+      "stats": [
+        {
+          "k": "30+",
+          "v": "Years"
+        },
+        {
+          "k": "1.2K",
+          "v": "Projects"
+        },
+        {
+          "k": "24/7",
+          "v": "Support"
+        }
+      ]
+    },
+    "sustainability": {
+      "chip": "Sustainability",
+      "title": "Smarter Energy, Smaller Footprint",
+      "lead": "Our pumps are designed to reduce energy consumption by up to 30%, integrating smart controls and remote diagnostics to minimize downtime and environmental impact.",
+      "bullets": [
+        "High-efficiency impellers and motors",
+        "Remote analytics and predictive maintenance",
+        "Certified sustainable manufacturing partners"
+      ],
+      "cta": "View Technology",
+      "metric": "18%",
+      "caption": "Average efficiency gains vs. legacy systems"
+    }
+  },
+  "products": {
+    "chip": "Catalog",
+    "title": "Featured Products",
+    "lead": "Engineered systems delivering reliable pressure, efficiency, and uptime in the harshest conditions.",
+    "items": [
       {
-        "title": "Municipal & Infra",
-        "desc": "Large-scale pumping stations, wastewater, pressure boosting & telemetry."
+        "title": "Smart Pump SAJ",
+        "desc": "High-efficiency pump for municipal and industrial use."
       },
       {
-        "title": "Industrial",
-        "desc": "Process pumps, VFD optimization, energy audits & turnkey retrofits."
+        "title": "Industrial Booster",
+        "desc": "Energy-saving variable-frequency drive for agriculture."
       },
       {
-        "title": "Agriculture",
-        "desc": "Irrigation systems, fertigation, and high-efficiency multi-stage pumps."
-      }
-    ],
-    "stats": [
-      {
-        "k": "30+",
-        "v": "Years"
-      },
-      {
-        "k": "1.2K",
-        "v": "Projects"
-      },
-      {
-        "k": "24/7",
-        "v": "Support"
+        "title": "Wastewater Pro",
+        "desc": "Robust solids-handling pump for infrastructure projects."
       }
     ]
   },
-  "products": {
-    "title": "Featured Products"
-  },
   "contact": {
+    "chip": "Let’s talk",
     "title": "Contact Us",
-    "name": "Full Name",
-    "email": "Email",
-    "message": "Message",
-    "send": "Send"
+    "lead": "Tell us about your project. We’ll reply within one business day.",
+    "form": {
+      "name_label": "Full Name",
+      "phone_label": "Phone",
+      "email_label": "Email",
+      "message_label": "Message",
+      "submit": "Send",
+      "placeholders": {
+        "name": "Your full name",
+        "phone": "+972 50-123-4567",
+        "email": "you@company.com",
+        "message": "Tell us about your project"
+      },
+      "errors": {
+        "name": "Please enter your full name.",
+        "phone": "Add the best number to reach you.",
+        "email": "Enter a valid email address.",
+        "message": "Share a few details so we can help."
+      },
+      "validation": {
+        "phone": "Please provide a valid phone number."
+      }
+    }
+  },
+  "chat": {
+    "toggle_label": "Chat with us",
+    "close": "Close chat",
+    "title": "AquaBot",
+    "subtitle": "How can we help?",
+    "intro": "Hi! I’m AquaBot. Ask me about products, quotes, or support.",
+    "status": "Online now",
+    "placeholder": "Type a message…",
+    "send": "Send",
+    "contact_confirmation": "Thanks for reaching out! We will contact you shortly.",
+    "placeholder_reply": {
+      "ready": "Connecting you with AquaBot… (integration coming soon).",
+      "fallback": "Thanks! A specialist will reach out shortly."
+    }
   }
 }

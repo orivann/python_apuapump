@@ -1,6 +1,5 @@
 (function () {
   const html = document.documentElement;
-  const body = document.body;
   const nav = document.querySelector('.nav');
   const navToggle = document.getElementById('navToggle');
   const navMenu = document.getElementById('navMenu');
@@ -23,8 +22,26 @@
   let lang = localStorage.getItem('lang') || 'en';
   let theme = localStorage.getItem('theme') || 'light';
   let langRequestToken = 0;
+  let translations = {};
 
   langBtn?.setAttribute('dir', 'ltr');
+
+  function resolvePath(source, path) {
+    if (!source || !path) {
+      return undefined;
+    }
+    return path.split('.').reduce((acc, part) => {
+      if (acc && Object.prototype.hasOwnProperty.call(acc, part)) {
+        return acc[part];
+      }
+      return undefined;
+    }, source);
+  }
+
+  function t(path, fallback = '') {
+    const value = resolvePath(translations, path);
+    return typeof value === 'string' ? value : fallback;
+  }
 
   function applyTheme() {
     const isDark = theme === 'dark';
@@ -34,15 +51,51 @@
     } else if (themeBtn) {
       themeBtn.textContent = isDark ? '🌙' : '☀️';
     }
-    themeBtn?.setAttribute('aria-label', isDark ? 'Switch to light theme' : 'Switch to dark theme');
+    const label = isDark
+      ? t('header.toggle_theme.light', 'Switch to light theme')
+      : t('header.toggle_theme.dark', 'Switch to dark theme');
+    themeBtn?.setAttribute('aria-label', label);
     localStorage.setItem('theme', theme);
   }
 
-  function setText(id, text) {
-    const el = document.getElementById(id);
-    if (el && typeof text === 'string') {
-      el.textContent = text;
-    }
+  function applyTranslations(dict) {
+    translations = dict || {};
+
+    const textNodes = document.querySelectorAll('[data-i18n]');
+    textNodes.forEach((node) => {
+      const key = node.dataset.i18n;
+      const value = resolvePath(translations, key);
+      if (typeof value === 'string') {
+        node.textContent = value;
+      }
+    });
+
+    const placeholderNodes = document.querySelectorAll('[data-i18n-placeholder]');
+    placeholderNodes.forEach((node) => {
+      const key = node.dataset.i18nPlaceholder;
+      const value = resolvePath(translations, key);
+      if (typeof value === 'string') {
+        node.setAttribute('placeholder', value);
+      }
+    });
+
+    const ariaLabelNodes = document.querySelectorAll('[data-i18n-aria-label]');
+    ariaLabelNodes.forEach((node) => {
+      const key = node.dataset.i18nAriaLabel;
+      const value = resolvePath(translations, key);
+      if (typeof value === 'string') {
+        node.setAttribute('aria-label', value);
+      }
+    });
+
+    const ariaLiveNodes = document.querySelectorAll('[data-i18n-aria-live]');
+    ariaLiveNodes.forEach((node) => {
+      const key = node.dataset.i18nAriaLive;
+      const value = resolvePath(translations, key);
+      if (typeof value === 'string') {
+        node.setAttribute('aria-live', value);
+      }
+    });
   }
 
   async function applyLang() {
@@ -59,62 +112,25 @@
       if (requestId !== langRequestToken) {
         return;
       }
-      document.title = dict.meta.title;
+      applyTranslations(dict);
+
+      const pageTitle = t('meta.title', document.title);
+      if (pageTitle) {
+        document.title = pageTitle;
+      }
       const metaDescription = document.querySelector('meta[name="description"]');
       if (metaDescription) {
-        metaDescription.setAttribute('content', dict.meta.description);
-      }
-
-      setText('brand', dict.header.brand);
-      setText('navProducts', dict.header.nav_products);
-      setText('navTechnology', dict.header.nav_technology);
-      setText('navSustainability', dict.header.nav_sustainability);
-      setText('navContact', dict.header.nav_contact);
-      setText('ctaQuote', dict.header.cta_quote);
-
-      const page = body.dataset.page || 'home';
-      if (page === 'home') {
-        setText('eyebrow', dict.hero.eyebrow);
-        setText('title', dict.hero.title);
-        setText('subtitle', dict.hero.subtitle);
-        setText('primaryBtn', dict.hero.primary);
-        setText('secondaryBtn', dict.hero.secondary);
-        setText('expertiseTitle', dict.sections.expertise || '');
-        setText('expertiseLead', dict.sections.lead || '');
-        const cards = dict.sections.cards || [];
-        cards.forEach((card, index) => {
-          const cardRoot = document.getElementById(`card${index + 1}`);
-          if (cardRoot) {
-            const heading = cardRoot.querySelector('h3');
-            const paragraph = cardRoot.querySelector('p');
-            if (heading) heading.textContent = card.title;
-            if (paragraph) paragraph.textContent = card.desc;
-          }
-        });
-        const stats = dict.sections.stats || [];
-        stats.forEach((stat, index) => {
-          const statRoot = document.getElementById(`stat${index + 1}`);
-          if (statRoot) {
-            const value = statRoot.querySelector('.stat__value');
-            const label = statRoot.querySelector('.stat__label');
-            if (value) value.textContent = stat.k;
-            if (label) label.textContent = stat.v;
-          }
-        });
-      } else if (page === 'products') {
-        setText('productsTitle', dict.products.title);
-      } else if (page === 'contact') {
-        setText('contactTitle', dict.contact.title);
-        setText('nameLabel', dict.contact.name);
-        setText('phoneLabel', dict.contact.phone);
-        setText('emailLabel', dict.contact.email);
-        setText('messageLabel', dict.contact.message);
-        setText('sendBtn', dict.contact.send);
+        const description = t('meta.description', metaDescription.getAttribute('content'));
+        if (description) {
+          metaDescription.setAttribute('content', description);
+        }
       }
 
       if (langBtn) {
         langBtn.textContent = lang.toUpperCase();
       }
+
+      applyTheme();
     } catch (error) {
       console.warn(error.message);
     }
@@ -217,8 +233,8 @@
     appendMessage(value, 'user');
     chatInput.value = '';
     const placeholderReply = chatbotReady
-      ? 'Connecting you with AquaBot… (integration coming soon).'
-      : 'Thanks! A specialist will reach out shortly.';
+      ? t('chat.placeholder_reply.ready', 'Connecting you with AquaBot… (integration coming soon).')
+      : t('chat.placeholder_reply.fallback', 'Thanks! A specialist will reach out shortly.');
     if (chatbotReady) {
       console.info('Chatbot API key detected. Plug backend integration here.', chatbotConfig);
     }
@@ -238,7 +254,7 @@
       if (input.name === 'phone') {
         const digits = (input.value || '').replace(/\D/g, '');
         if (digits.length < 7) {
-          input.setCustomValidity('Please provide a valid phone number.');
+          input.setCustomValidity(t('contact.form.validation.phone', 'Please provide a valid phone number.'));
         }
       }
       const isValid = input.checkValidity();
@@ -254,7 +270,7 @@
       });
       contactForm.reset();
       fields.forEach((field) => field.classList.remove('is-error'));
-      appendMessage('Thanks for reaching out! We will contact you shortly.', 'bot');
+      appendMessage(t('chat.contact_confirmation', 'Thanks for reaching out! We will contact you shortly.'), 'bot');
       setChatState(true);
     }
   });
@@ -268,6 +284,6 @@
   });
 
   // Initial load
-  applyTheme();
   applyLang();
+  applyTheme();
 })();
