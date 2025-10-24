@@ -1,15 +1,15 @@
 {
   "meta": {
-    "title": "AquaPump — Industry-Leading Water Solutions",
-    "description": "Premium pumps and turnkey water systems for industry, agriculture, municipalities & infrastructure."
+    "title": "AquaPump — Brand Identity Guidelines",
+    "description": "AquaPump's official palette, typography, and logo usage rules for consistent brand storytelling."
   },
   "header": {
     "brand": "AquaPump",
-    "nav_products": "Products",
-    "nav_technology": "Technology",
-    "nav_sustainability": "Sustainability",
+    "nav_products": "Color System",
+    "nav_technology": "Typography",
+    "nav_sustainability": "Usage",
     "nav_contact": "Contact",
-    "cta_quote": "Get Quote"
+    "cta_quote": "Contact Team"
   },
   "hero": {
     "eyebrow": "Precision • Reliability • Performance",
@@ -60,5 +60,103 @@
     "email": "Email",
     "message": "Message",
     "send": "Send"
+  },
+  "home": {
+    "hero": {
+      "chip": "Brand Playbook",
+      "title": "AquaPump Identity System",
+      "subtitle": "A focused guide to color, typography, and logo usage so every touchpoint feels unmistakably AquaPump.",
+      "primary": "Explore Colors",
+      "secondary": "Contact Team"
+    },
+    "colors": {
+      "chip": "Your Colors",
+      "title": "Color System",
+      "lead": "These hues express the clarity, freshness, and reliability at the heart of AquaPump. Use them confidently and consistently.",
+      "cards": [
+        {
+          "label": "Primary",
+          "name": "AquaPump Blue",
+          "note": "HEX #0B63F6 · RGB 11 99 246 — Hero backgrounds, navigation, and core CTAs."
+        },
+        {
+          "label": "Accent",
+          "name": "Cascade Aqua",
+          "note": "HEX #12B4FF · RGB 18 180 255 — Gradients, highlights, and informational chips."
+        },
+        {
+          "label": "Foundation",
+          "name": "Deep Marine",
+          "note": "HEX #102542 · RGB 16 37 66 — Headlines, body copy, and contrast against light surfaces."
+        },
+        {
+          "label": "Energy",
+          "name": "Hydro Green",
+          "note": "HEX #2BB673 · RGB 43 182 115 — Sustainability messages, success states, and data wins."
+        }
+      ]
+    },
+    "type": {
+      "chip": "Typography",
+      "title": "Typeface Pairing",
+      "lead": "Lean on bold, confident typography to balance engineering precision with brand warmth.",
+      "cards": [
+        {
+          "label": "Display",
+          "meta": "Manrope — 700/800",
+          "heading": "AQUAPUMP",
+          "body": "Use for hero titles, section headlines, and prominent numbers. Tight tracking and uppercase deliver strength."
+        },
+        {
+          "label": "Support",
+          "meta": "Manrope — 400/500",
+          "heading": "Sifonn Pro",
+          "body": "Pair with lighter weights for body copy, captions, and multilingual content. Generous line-height keeps long-form easy to scan."
+        }
+      ]
+    },
+    "usage": {
+      "chip": "Application",
+      "title": "Bring It To Life",
+      "lead": "From print collateral to the web, keep layouts bright, spacious, and anchored by the AquaPump drop.",
+      "cards": [
+        {
+          "title": "Logo Clearspace",
+          "body": "Preserve one full logomark radius on all sides. Use the blue circle on light grounds and the white knockout on deep marine."
+        },
+        {
+          "title": "Grid & Balance",
+          "body": "Align content to a centered column. Pair gradients with soft shadows to echo the flow of water and kinetic energy."
+        },
+        {
+          "title": "Voice & Tone",
+          "body": "Write with clarity and optimism. Highlight measurable impact, service reliability, and sustainable innovation."
+        }
+      ]
+    },
+    "logo": {
+      "chip": "Logo",
+      "title": "Signature Mark",
+      "lead": "Always keep the AquaPump drop crisp, centered, and breathing. Use these lockups for primary placements.",
+      "cards": [
+        {
+          "title": "Light Background",
+          "caption": "Use the full-color mark with subtle shadowing to keep edges sharp."
+        },
+        {
+          "title": "Dark Background",
+          "caption": "Knock out the wordmark to white and retain the aqua ring to preserve contrast."
+        },
+        {
+          "title": "Icon-Only",
+          "caption": "The droplet symbol can act as a favicon or social avatar. Minimum size 32px."
+        },
+        {
+          "title": "Download Assets",
+          "caption": "Need files? Save the SVG for print-perfect scaling across media.",
+          "cta": "Download SVG"
+        }
+      ]
+    }
   }
 }
