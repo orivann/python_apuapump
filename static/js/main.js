@@ -21,6 +21,14 @@
 
   const DEFAULT_LANG = 'en';
   const DEFAULT_THEME = 'light';
+  const prefersReducedMotion = typeof window.matchMedia === 'function'
+    ? window.matchMedia('(prefers-reduced-motion: reduce)')
+    : { matches: false };
+
+  let revealObserver = null;
+  let parallaxTargets = [];
+  let parallaxActive = false;
+  let parallaxFrame = null;
 
   let lang = DEFAULT_LANG;
   let theme = DEFAULT_THEME;
@@ -47,6 +55,147 @@
   function t(path, fallback = '') {
     const value = resolvePath(translations, path);
     return typeof value === 'string' ? value : fallback;
+  }
+
+  function prepareAnimationTarget(target) {
+    if (!target || !target.dataset) return;
+    const duration = parseFloat(target.dataset.animateDuration || '0');
+    const delay = parseFloat(target.dataset.animateDelay || '0');
+    const mode = target.dataset.animate || '';
+
+    if (mode === 'stagger-up') {
+      const step = parseFloat(target.dataset.animateStep || '0.08');
+      target.style.setProperty('--stagger-step', `${step}s`);
+      if (!Number.isNaN(delay) && delay > 0) {
+        target.style.setProperty('--reveal-delay', `${delay}s`);
+      }
+      const children = target.querySelectorAll(':scope > *');
+      children.forEach((child, index) => {
+        child.style.setProperty('--index', index);
+        if (!Number.isNaN(duration) && duration > 0) {
+          child.style.setProperty('--reveal-duration', `${duration}s`);
+        }
+      });
+      return;
+    }
+
+    if (!Number.isNaN(delay) && delay > 0) {
+      target.style.setProperty('--reveal-delay', `${delay}s`);
+    }
+    if (!Number.isNaN(duration) && duration > 0) {
+      target.style.setProperty('--reveal-duration', `${duration}s`);
+    }
+  }
+
+  function initScrollAnimations(reset = false) {
+    if (reset && revealObserver) {
+      revealObserver.disconnect();
+      revealObserver = null;
+    }
+
+    const targets = Array.from(document.querySelectorAll('[data-animate]'));
+    if (!targets.length) {
+      return;
+    }
+
+    targets.forEach(prepareAnimationTarget);
+
+    if (prefersReducedMotion?.matches || !('IntersectionObserver' in window)) {
+      targets.forEach((target) => target.classList.add('is-visible'));
+      return;
+    }
+
+    revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        const { target } = entry;
+        const repeat = target.dataset.animateRepeat === 'true';
+        if (entry.isIntersecting) {
+          window.requestAnimationFrame(() => target.classList.add('is-visible'));
+          if (!repeat && revealObserver) {
+            revealObserver.unobserve(target);
+          }
+        } else if (repeat) {
+          target.classList.remove('is-visible');
+        }
+      });
+    }, {
+      threshold: 0.25,
+      rootMargin: '0px 0px -10% 0px',
+    });
+
+    targets.forEach((target) => revealObserver.observe(target));
+  }
+
+  function updateParallaxPositions() {
+    if (!parallaxTargets.length) {
+      parallaxFrame = null;
+      return;
+    }
+
+    const scrollY = window.scrollY || window.pageYOffset || 0;
+    const viewportMid = (window.innerHeight || document.documentElement.clientHeight || 0) / 2 + scrollY;
+
+    parallaxTargets.forEach((node) => {
+      if (!(node instanceof HTMLElement)) return;
+      const depth = parseFloat(node.dataset.parallax || '0.12');
+      const axis = node.dataset.parallaxAxis === 'x' ? 'x' : 'y';
+      const max = parseFloat(node.dataset.parallaxMax || '0');
+      const rect = node.getBoundingClientRect();
+      const elementMid = scrollY + rect.top + rect.height / 2;
+      let offset = (viewportMid - elementMid) * depth * -1;
+      if (!Number.isNaN(max) && max > 0) {
+        const clamp = Math.abs(max);
+        offset = Math.max(Math.min(offset, clamp), -clamp);
+      }
+      const value = `${offset.toFixed(2)}px`;
+      if (axis === 'x') {
+        node.style.setProperty('--parallax-x', value);
+      } else {
+        node.style.setProperty('--parallax-y', value);
+      }
+    });
+
+    parallaxFrame = null;
+  }
+
+  function onParallaxScroll() {
+    if (!parallaxActive || parallaxFrame !== null) {
+      return;
+    }
+    parallaxFrame = window.requestAnimationFrame(updateParallaxPositions);
+  }
+
+  function initParallax() {
+    parallaxTargets = Array.from(document.querySelectorAll('[data-parallax]'));
+
+    if (parallaxFrame !== null) {
+      window.cancelAnimationFrame(parallaxFrame);
+      parallaxFrame = null;
+    }
+
+    if (prefersReducedMotion?.matches || !parallaxTargets.length) {
+      parallaxTargets.forEach((node) => {
+        node.style.removeProperty('--parallax-x');
+        node.style.removeProperty('--parallax-y');
+      });
+      if (parallaxActive) {
+        window.removeEventListener('scroll', onParallaxScroll);
+        parallaxActive = false;
+      }
+      return;
+    }
+
+    if (!parallaxActive) {
+      parallaxActive = true;
+      window.addEventListener('scroll', onParallaxScroll, { passive: true });
+    }
+
+    updateParallaxPositions();
+  }
+
+  function handleMotionPreferenceChange() {
+    initScrollAnimations(true);
+    initParallax();
   }
 
   function applyTheme() {
@@ -188,10 +337,9 @@
     const safeText = escapeHtml(text);
     bubble.innerHTML = `<p>${safeText}</p><span class="message__time">${new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>`;
     chatMessages.appendChild(bubble);
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     chatMessages.scrollTo({
       top: chatMessages.scrollHeight,
-      behavior: prefersReducedMotion ? 'auto' : 'smooth',
+      behavior: prefersReducedMotion?.matches ? 'auto' : 'smooth',
     });
   }
 
@@ -292,6 +440,15 @@
       setChatState(false);
     }
   });
+
+  if (prefersReducedMotion && typeof prefersReducedMotion.addEventListener === 'function') {
+    prefersReducedMotion.addEventListener('change', handleMotionPreferenceChange);
+  } else if (prefersReducedMotion && typeof prefersReducedMotion.addListener === 'function') {
+    prefersReducedMotion.addListener(handleMotionPreferenceChange);
+  }
+
+  initScrollAnimations();
+  initParallax();
 
   // Initial load
   applyLang();
