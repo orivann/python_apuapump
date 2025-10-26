@@ -171,6 +171,30 @@
           "value": "22"
         }
       ]
+    },
+    "experience": {
+      "chip": "Experience",
+      "title": "A living, breathing operations hub",
+      "lead": "Scroll-triggered telemetry and cinematic animations bring every datapoint to life so decision makers instantly understand flow, pressure, and uptime.",
+      "pills": [
+        "Edge-to-cloud orchestration",
+        "Sub-2s loading commitment",
+        "AI-ready architecture"
+      ],
+      "timeline": [
+        {
+          "title": "Immersive hero fly-through",
+          "body": "Critical metrics pulse into view as visitors arrive, reinforcing Aquatech precision and Israeli engineering excellence."
+        },
+        {
+          "title": "Scroll-linked storytelling",
+          "body": "Sections cascade with micro interactions, guiding prospects through value propositions and lead capture moments."
+        },
+        {
+          "title": "Realtime telemetry canvas",
+          "body": "A modular dashboard canvas supports AI, chatbot, and analytics integrations without performance trade-offs."
+        }
+      ]
     }
   },
   "products": {
@@ -335,10 +359,22 @@
       "title": "Performance benchmarks we guarantee",
       "lead": "Measured across mobile and desktop, our digital and physical stack keeps conversions high and operational costs low.",
       "stats": [
-        { "k": "99.97%", "v": "Uptime across fleets" },
-        { "k": "↓32%", "v": "Energy usage" },
-        { "k": "↑45%", "v": "Lead conversion" },
-        { "k": "1.8s", "v": "Largest Contentful Paint" }
+        {
+          "k": "99.97%",
+          "v": "Uptime across fleets"
+        },
+        {
+          "k": "↓32%",
+          "v": "Energy usage"
+        },
+        {
+          "k": "↑45%",
+          "v": "Lead conversion"
+        },
+        {
+          "k": "1.8s",
+          "v": "Largest Contentful Paint"
+        }
       ]
     },
     "case_studies": {
@@ -351,8 +387,14 @@
           "title": "Dan Region pumping overhaul",
           "body": "Converted 18 pumping stations to AquaPump telemetry. Achieved 43% faster fault detection and 28% drop in truck rolls.",
           "metrics": [
-            { "value": "↓28%", "label": "Maintenance costs" },
-            { "value": "↓8hrs", "label": "Average outage" }
+            {
+              "value": "↓28%",
+              "label": "Maintenance costs"
+            },
+            {
+              "value": "↓8hrs",
+              "label": "Average outage"
+            }
           ]
         },
         {
@@ -360,8 +402,14 @@
           "title": "Galilee food processing plant",
           "body": "VFD retrofits with AquaPump analytics cut energy bills by 35% while keeping CIP cycles within ±1% pressure variance.",
           "metrics": [
-            { "value": "↓35%", "label": "Energy spend" },
-            { "value": "↑22%", "label": "Output capacity" }
+            {
+              "value": "↓35%",
+              "label": "Energy spend"
+            },
+            {
+              "value": "↑22%",
+              "label": "Output capacity"
+            }
           ]
         },
         {
@@ -369,8 +417,14 @@
           "title": "Negev smart irrigation",
           "body": "Deployed remote sensing with AquaBot insights. Water use dropped 31% while yields grew 18% year-over-year.",
           "metrics": [
-            { "value": "↓31%", "label": "Water usage" },
-            { "value": "↑18%", "label": "Yield increase" }
+            {
+              "value": "↓31%",
+              "label": "Water usage"
+            },
+            {
+              "value": "↑18%",
+              "label": "Yield increase"
+            }
           ]
         }
       ]
@@ -387,9 +441,18 @@
       "score": {
         "title": "Impact Index",
         "items": [
-          { "label": "Scope 1 emissions", "value": "Net zero" },
-          { "label": "Water recovered", "value": "2.1B litres" },
-          { "label": "Communities served", "value": "58 municipalities" }
+          {
+            "label": "Scope 1 emissions",
+            "value": "Net zero"
+          },
+          {
+            "label": "Water recovered",
+            "value": "2.1B litres"
+          },
+          {
+            "label": "Communities served",
+            "value": "58 municipalities"
+          }
         ]
       }
     },
@@ -427,9 +490,18 @@
       ],
       "meta": "Aquatech Group at a glance",
       "metrics": [
-        { "label": "Experts worldwide", "value": "640+" },
-        { "label": "Countries served", "value": "32" },
-        { "label": "Active patents", "value": "48" }
+        {
+          "label": "Experts worldwide",
+          "value": "640+"
+        },
+        {
+          "label": "Countries served",
+          "value": "32"
+        },
+        {
+          "label": "Active patents",
+          "value": "48"
+        }
       ]
     },
     "network": {

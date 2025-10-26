@@ -1,27 +1,27 @@
 {% extends 'base.html' %}
 {% import 'components.html' as ui %}
 {% block hero %}
-<header class="hero hero--primary">
+<header class="hero hero--primary" data-animate="fade-in" data-animate-duration="1.1">
   <div class="container hero__inner">
-    <div class="hero__content">
-      <div class="hero__crest">
+    <div class="hero__content" data-animate="slide-up">
+      <div class="hero__crest" data-animate="fade-up" data-animate-delay="0.05">
         <img class="hero__crest-mark" src="{{ url_for('static', filename='img/aquapump-logo-mark.svg') }}" alt="" loading="lazy" aria-hidden="true" />
         <span class="chip chip--accent" id="eyebrow" data-i18n="home.hero.crest">Precision water intelligence</span>
       </div>
-      <h1 class="hero__title" id="title" data-i18n="home.hero.title">Future-proof water infrastructure.</h1>
-      <p class="hero__lead" id="subtitle" data-i18n="home.hero.subtitle">We design, deploy, and maintain premium pump systems for critical industries with signature Apple-level finish and Tesla-grade performance analytics.</p>
-      <div class="hero__actions">
+      <h1 class="hero__title" id="title" data-animate="slide-up" data-animate-delay="0.1" data-i18n="home.hero.title">Future-proof water infrastructure.</h1>
+      <p class="hero__lead" id="subtitle" data-animate="slide-up" data-animate-delay="0.18" data-i18n="home.hero.subtitle">We design, deploy, and maintain premium pump systems for critical industries with signature Apple-level finish and Tesla-grade performance analytics.</p>
+      <div class="hero__actions" data-animate="fade-up" data-animate-delay="0.28">
         {{ ui.button('Explore platform', variant='primary', href='/products', id='primaryBtn', translation_key='home.hero.primary') }}
         {{ ui.button('Talk to engineering', variant='outline', href='/contact', id='secondaryBtn', translation_key='home.hero.secondary') }}
       </div>
-      <ul class="hero__feature-list" role="list">
+      <ul class="hero__feature-list" role="list" data-animate="fade-up" data-animate-delay="0.38" data-animate-duration="0.9">
         <li class="hero__feature" data-i18n="home.hero.features.0">Digital twin dashboards out of the box</li>
         <li class="hero__feature" data-i18n="home.hero.features.1">Supabase-ready event streaming for instant alerts</li>
         <li class="hero__feature" data-i18n="home.hero.features.2">Sustainable builds with premium industrial design</li>
       </ul>
     </div>
     <div class="hero__media" role="presentation">
-      <div class="hero__panel">
+      <div class="hero__panel" data-animate="scale-in" data-animate-delay="0.12">
         <img class="hero__panel-logo" src="{{ url_for('static', filename='img/aquapump-logo-badge.svg') }}" alt="" loading="lazy" aria-hidden="true" />
         <div class="hero__panel-copy">
           <p data-i18n="home.hero.panel_title">AquaPump heritage badge</p>
@@ -29,17 +29,17 @@
           <span class="hero__panel-meta" data-i18n="home.hero.panel_meta">ISO 9001 · GreenMark · UL Listed</span>
         </div>
       </div>
-      <div class="hero__stat hero__stat--uptime">
+      <div class="hero__stat hero__stat--uptime" data-animate="float-in" data-animate-delay="0.22">
         <span class="hero__stat-label" data-i18n="home.hero.uptime_label">Verified uptime</span>
         <span class="hero__stat-value" data-i18n="home.hero.uptime_value">99.97%</span>
       </div>
-      <div class="hero__stat hero__stat--savings">
+      <div class="hero__stat hero__stat--savings" data-animate="float-in" data-animate-delay="0.32">
         <span class="hero__stat-label" data-i18n="home.hero.savings_label">Energy reduction</span>
         <span class="hero__stat-value" data-i18n="home.hero.savings_value">↓ 32%</span>
       </div>
-      <div class="hero__orb" aria-hidden="true"></div>
-      <div class="hero__mesh" aria-hidden="true"></div>
-      <div class="hero__glow"></div>
+      <div class="hero__orb" data-parallax="0.25" data-parallax-max="120" aria-hidden="true"></div>
+      <div class="hero__mesh" data-parallax="0.12" data-parallax-max="90" aria-hidden="true"></div>
+      <div class="hero__glow" data-parallax="0.08" data-parallax-max="60" aria-hidden="true"></div>
     </div>
   </div>
   <div class="hero__wave" aria-hidden="true"></div>
@@ -48,7 +48,7 @@
 
 {% block content %}
 <section class="section section--subtle" aria-label="Trusted partners" data-i18n-aria-label="home.brands.aria_label">
-  <div class="container section__inner section__inner--brands">
+  <div class="container section__inner section__inner--brands" data-animate="fade-up" data-animate-duration="0.9">
     <span class="chip chip--ghost section__badge" data-i18n="home.brands.badge">Trusted by innovators</span>
     <p class="section__subtitle" data-i18n="home.brands.copy">Global infrastructure leaders lean on AquaPump aesthetics and reliability for mission critical distribution.</p>
     <ul class="brand-strip">
@@ -64,17 +64,17 @@
 
 <section class="section" id="technology">
   <div class="container section__inner">
-    <div class="section__header">
+    <div class="section__header" data-animate="slide-up">
       <span class="chip chip--ghost" data-i18n="home.sections.expertise_chip">Expertise</span>
       <h2 class="section__title" id="expertiseTitle" data-i18n="home.sections.expertise_title">Our Expertise</h2>
       <p class="section__lead" id="expertiseLead" data-i18n="home.sections.expertise_lead">Precision engineering, digital monitoring, and lifecycle support to keep critical systems running.</p>
     </div>
-    <div class="feature-grid">
+    <div class="feature-grid" data-animate="stagger-up" data-animate-duration="0.8">
       {{ ui.feature_card(1, 'Municipal & Infra', 'Large-scale pumping stations, wastewater, pressure boosting & telemetry.', translation_key='home.sections.cards.0') }}
       {{ ui.feature_card(2, 'Industrial', 'Process pumps, VFD optimization, energy audits & turnkey retrofits.', translation_key='home.sections.cards.1') }}
       {{ ui.feature_card(3, 'Agriculture', 'Irrigation systems, fertigation, and high-efficiency multi-stage pumps.', translation_key='home.sections.cards.2') }}
     </div>
-    <div class="stat-bar">
+    <div class="stat-bar" data-animate="stagger-up" data-animate-delay="0.12" data-animate-duration="0.9">
       {{ ui.stat_block(1, '30+', 'Years', translation_key='home.sections.stats.0') }}
       {{ ui.stat_block(2, '1.2K', 'Projects', translation_key='home.sections.stats.1') }}
       {{ ui.stat_block(3, '24/7', 'Support', translation_key='home.sections.stats.2') }}
@@ -82,9 +82,49 @@
   </div>
 </section>
 
+<section class="section section--gradient" id="experience">
+  <div class="container section__inner section__inner--split experience-grid">
+    <div class="experience-grid__intro" data-animate="slide-up">
+      <span class="chip chip--ghost" data-i18n="home.experience.chip">Experience</span>
+      <h2 class="section__title" data-i18n="home.experience.title">A living, breathing operations hub</h2>
+      <p class="section__lead" data-i18n="home.experience.lead">Scroll-triggered telemetry and cinematic animations bring every datapoint to life so decision makers instantly understand flow, pressure, and uptime.</p>
+      <div class="experience-grid__pills" role="list">
+        <span class="experience-grid__pill" data-i18n="home.experience.pills.0">Edge-to-cloud orchestration</span>
+        <span class="experience-grid__pill" data-i18n="home.experience.pills.1">Sub-2s loading commitment</span>
+        <span class="experience-grid__pill" data-i18n="home.experience.pills.2">AI-ready architecture</span>
+      </div>
+    </div>
+    <div class="experience-grid__timeline">
+      <div class="timeline" role="list" data-animate="stagger-up" data-animate-delay="0.1">
+        <article class="timeline__item" role="listitem">
+          <span class="timeline__badge">01</span>
+          <div class="timeline__content">
+            <h3 data-i18n="home.experience.timeline.0.title">Immersive hero fly-through</h3>
+            <p data-i18n="home.experience.timeline.0.body">Critical metrics pulse into view as visitors arrive, reinforcing Aquatech precision and Israeli engineering excellence.</p>
+          </div>
+        </article>
+        <article class="timeline__item" role="listitem">
+          <span class="timeline__badge">02</span>
+          <div class="timeline__content">
+            <h3 data-i18n="home.experience.timeline.1.title">Scroll-linked storytelling</h3>
+            <p data-i18n="home.experience.timeline.1.body">Sections cascade with micro interactions, guiding prospects through value propositions and lead capture moments.</p>
+          </div>
+        </article>
+        <article class="timeline__item" role="listitem">
+          <span class="timeline__badge">03</span>
+          <div class="timeline__content">
+            <h3 data-i18n="home.experience.timeline.2.title">Realtime telemetry canvas</h3>
+            <p data-i18n="home.experience.timeline.2.body">A modular dashboard canvas supports AI, chatbot, and analytics integrations without performance trade-offs.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="section section--surface" id="impact">
   <div class="container section__inner section__inner--split">
-    <div class="impact-intro">
+    <div class="impact-intro" data-animate="slide-up">
       <span class="chip chip--ghost" data-i18n="home.impact.chip">Impact</span>
       <h2 class="section__title" data-i18n="home.impact.title">Speed, stability, and savings</h2>
       <p class="section__lead" data-i18n="home.impact.lead">Optimized UI and UX deliver quicker decisions, while our Israeli-built hardware cuts commissioning time and energy consumption across every deployment.</p>
@@ -94,7 +134,7 @@
         <li data-i18n="home.impact.bullets.2">SEO-first architecture to help prospects find AquaPump</li>
       </ul>
     </div>
-    <div class="impact-metrics" role="presentation">
+    <div class="impact-metrics" role="presentation" data-animate="stagger-up" data-animate-delay="0.08">
       <article class="impact-card">
         <h3 data-i18n="home.impact.metrics.0.title">↓ 42% faster launch</h3>
         <p data-i18n="home.impact.metrics.0.body">Optimized assets, caching, and structured data for best-in-class speed scores.</p>
@@ -113,7 +153,7 @@
 
 <section class="section section--surface" id="sustainability">
   <div class="container section__inner section__inner--split">
-    <div>
+    <div data-animate="slide-up">
       <span class="chip chip--ghost" data-i18n="home.sustainability.chip">Sustainability</span>
       <h2 class="section__title" data-i18n="home.sustainability.title">Smarter Energy, Smaller Footprint</h2>
       <p class="section__lead" data-i18n="home.sustainability.lead">Our pumps are designed to reduce energy consumption by up to 30%, integrating smart controls and remote diagnostics to minimize downtime and environmental impact.</p>
@@ -126,7 +166,7 @@
         {{ ui.button('View Technology', variant='ghost', href='/products#technology', translation_key='home.sustainability.cta') }}
       </div>
     </div>
-    <div class="sustainability-card" role="presentation">
+    <div class="sustainability-card" role="presentation" data-animate="float-in" data-animate-delay="0.15">
       <div class="sustainability-card__inner">
         <p class="sustainability-card__metric" data-i18n="home.sustainability.metric">18%</p>
         <p class="sustainability-card__caption" data-i18n="home.sustainability.caption">Average efficiency gains vs. legacy systems</p>
@@ -138,7 +178,7 @@
 
 <section class="section" id="aquatech">
   <div class="container section__inner section__inner--split">
-    <div>
+    <div data-animate="slide-up">
       <span class="chip chip--ghost" data-i18n="home.aquatech.chip">Aquatech Group</span>
       <h2 class="section__title" data-i18n="home.aquatech.title">Part of Israel's Aquatech Group</h2>
       <p class="section__lead" data-i18n="home.aquatech.lead">As a proud member of the <a href="https://www.aquatech.co.il/" target="_blank" rel="noopener">Aquatech Group</a>, AquaPump delivers integrated solutions backed by nationwide service teams and decades of Israeli water innovation.</p>
@@ -151,7 +191,7 @@
         {{ ui.button('Meet Aquatech Group', variant='primary', href='https://www.aquatech.co.il/', translation_key='home.aquatech.cta') }}
       </div>
     </div>
-    <div class="aquatech-card" role="presentation">
+    <div class="aquatech-card" role="presentation" data-animate="stagger-up" data-animate-delay="0.12">
       <p class="aquatech-card__meta" data-i18n="home.aquatech.meta">Aquatech Group · Tel Aviv · Since 1991</p>
       <div class="aquatech-card__grid">
         <div>
