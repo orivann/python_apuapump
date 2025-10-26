@@ -19,10 +19,22 @@
   const chatbotConfig = appConfig.chatbot || {};
   const chatbotReady = Boolean(chatbotConfig.api_key_set);
 
-  let lang = localStorage.getItem('lang') || 'en';
-  let theme = localStorage.getItem('theme') || 'light';
+  const DEFAULT_LANG = 'en';
+  const DEFAULT_THEME = 'light';
+
+  let lang = localStorage.getItem('lang') || DEFAULT_LANG;
+  let theme = localStorage.getItem('theme') || DEFAULT_THEME;
   let langRequestToken = 0;
   let translations = {};
+
+  if (lang !== DEFAULT_LANG) {
+    lang = DEFAULT_LANG;
+  }
+  if (theme !== DEFAULT_THEME) {
+    theme = DEFAULT_THEME;
+  }
+  localStorage.setItem('lang', lang);
+  localStorage.setItem('theme', theme);
 
   langBtn?.setAttribute('dir', 'ltr');
 
@@ -182,7 +194,11 @@
     const safeText = escapeHtml(text);
     bubble.innerHTML = `<p>${safeText}</p><span class="message__time">${new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>`;
     chatMessages.appendChild(bubble);
-    chatMessages.scrollTo({ top: chatMessages.scrollHeight, behavior: 'smooth' });
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    chatMessages.scrollTo({
+      top: chatMessages.scrollHeight,
+      behavior: prefersReducedMotion ? 'auto' : 'smooth',
+    });
   }
 
   function setChatState(open) {

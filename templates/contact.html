@@ -8,7 +8,7 @@
     <div class="hero__content">
       <span class="chip chip--ghost" data-i18n="contact.chip">Let’s talk</span>
       <h1 class="hero__title" id="contactTitle" data-i18n="contact.title">Contact Us</h1>
-      <p class="hero__lead" data-i18n="contact.lead">Tell us about your project. We’ll reply within one business day.</p>
+      <p class="hero__lead" data-i18n="contact.lead">Connect with AquaPump’s Israeli engineering team. As part of the Aquatech Group we respond in minutes and stay with you through deployment.</p>
     </div>
   </div>
   <div class="hero__wave" aria-hidden="true"></div>
@@ -17,7 +17,7 @@
 
 {% block content %}
 <section class="section">
-  <div class="container section__inner section__inner--narrow">
+  <div class="container section__inner section__inner--split contact-layout">
     <form class="form" id="contactForm" novalidate>
       <div class="form__field">
         <label class="form__label" id="nameLabel" for="name" data-i18n="contact.form.name_label">Full Name</label>
@@ -43,6 +43,50 @@
         <button type="submit" class="btn btn--primary" id="sendBtn" data-i18n="contact.form.submit">Send</button>
       </div>
     </form>
+    <aside class="contact-card" aria-labelledby="contactDirect">
+      <span class="contact-card__badge" data-i18n="contact.details.badge">Direct line</span>
+      <h2 class="contact-card__title" id="contactDirect" data-i18n="contact.details.title">Talk with our engineers</h2>
+      <p class="contact-card__lead" data-i18n="contact.details.lead">We respond in under 15 minutes on business days. Share your scope and we will prepare deployment-ready recommendations.</p>
+      <ul class="contact-card__channels" role="list">
+        <li>
+          <span class="contact-card__channel-label" data-i18n="contact.details.channels.0.label">Service desk</span>
+          <a href="tel:+97239121234" class="contact-card__channel-value" data-i18n="contact.details.channels.0.value">+972 3-912-1234</a>
+        </li>
+        <li>
+          <span class="contact-card__channel-label" data-i18n="contact.details.channels.1.label">WhatsApp</span>
+          <a href="https://wa.me/972501234567" class="contact-card__channel-value" target="_blank" rel="noreferrer" data-i18n="contact.details.channels.1.value">+972 50-123-4567</a>
+        </li>
+        <li>
+          <span class="contact-card__channel-label" data-i18n="contact.details.channels.2.label">Email</span>
+          <a href="mailto:hello@aquapump.com" class="contact-card__channel-value" data-i18n="contact.details.channels.2.value">hello@aquapump.com</a>
+        </li>
+      </ul>
+      <p class="contact-card__meta" data-i18n="contact.details.meta">Looking for API access? Add your keys to the .env file and go live.</p>
+    </aside>
+  </div>
+</section>
+
+<section class="section section--surface contact-extra">
+  <div class="container section__inner section__inner--split">
+    <div>
+      <span class="chip chip--ghost" data-i18n="contact.extra.chip">Partnership</span>
+      <h2 class="section__title" data-i18n="contact.extra.title">Aquatech Group coverage</h2>
+      <p class="section__lead" data-i18n="contact.extra.lead">From Tel Aviv headquarters to regional service hubs, we bring Israeli innovation and Aquatech Group resources wherever you operate.</p>
+    </div>
+    <div class="contact-extra__grid">
+      <div>
+        <h3 data-i18n="contact.extra.metrics.0.title">22 partner sites</h3>
+        <p data-i18n="contact.extra.metrics.0.body">Shared parts inventory and 24/7 call centers keep deployments resilient.</p>
+      </div>
+      <div>
+        <h3 data-i18n="contact.extra.metrics.1.title">Dedicated launch team</h3>
+        <p data-i18n="contact.extra.metrics.1.body">We guide you from API key setup to full containerized rollouts.</p>
+      </div>
+      <div>
+        <h3 data-i18n="contact.extra.metrics.2.title">Global support SLA</h3>
+        <p data-i18n="contact.extra.metrics.2.body">Israeli engineers coordinate with Aquatech partners for seamless maintenance.</p>
+      </div>
+    </div>
   </div>
 </section>
 {% endblock %}

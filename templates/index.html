@@ -4,26 +4,41 @@
 <header class="hero hero--primary">
   <div class="container hero__inner">
     <div class="hero__content">
-      <span class="chip chip--accent" id="eyebrow" data-i18n="home.hero.chip">Industry-Leading Water Solutions</span>
-      <h1 class="hero__title" id="title" data-i18n="home.hero.title">Your Pump, Our Solution</h1>
-      <p class="hero__lead" id="subtitle" data-i18n="home.hero.subtitle">30+ years of excellence in water system solutions. Leading provider of pumps for industry, agriculture, municipalities, and infrastructure.</p>
-      <div class="hero__actions">
-        {{ ui.button('Our Products', variant='primary', href='/products', id='primaryBtn', translation_key='home.hero.primary') }}
-        {{ ui.button('Get Quote', variant='outline', href='/contact', id='secondaryBtn', translation_key='home.hero.secondary') }}
+      <div class="hero__crest">
+        <img class="hero__crest-mark" src="{{ url_for('static', filename='img/aquapump-logo-mark.svg') }}" alt="AquaPump mark" loading="lazy" aria-hidden="true" />
+        <span class="chip chip--accent" id="eyebrow" data-i18n="home.hero.crest">Israeli precision water intelligence</span>
       </div>
+      <h1 class="hero__title" id="title" data-i18n="home.hero.title">Future-proof water infrastructure.</h1>
+      <p class="hero__lead" id="subtitle" data-i18n="home.hero.subtitle">AquaPump is an Israeli company within the Aquatech Group crafting premium pump systems with Apple-level finish, Tesla-grade analytics, and deployment-ready Supabase integrations.</p>
+      <div class="hero__actions">
+        {{ ui.button('Explore platform', variant='primary', href='/products', id='primaryBtn', translation_key='home.hero.primary') }}
+        {{ ui.button('Talk to engineering', variant='outline', href='/contact', id='secondaryBtn', translation_key='home.hero.secondary') }}
+      </div>
+      <ul class="hero__feature-list" role="list">
+        <li class="hero__feature" data-i18n="home.hero.features.0">Israeli engineering backed by Aquatech Group</li>
+        <li class="hero__feature" data-i18n="home.hero.features.1">Supabase-ready event streaming for instant alerts</li>
+        <li class="hero__feature" data-i18n="home.hero.features.2">Digital twins and predictive maintenance dashboards</li>
+      </ul>
     </div>
     <div class="hero__media" role="presentation">
+      <div class="hero__panel">
+        <img class="hero__panel-logo" src="{{ url_for('static', filename='img/aquapump-logo-badge.svg') }}" alt="AquaPump heritage badge" loading="lazy" />
+        <div class="hero__panel-copy">
+          <p data-i18n="home.hero.panel_title">AquaPump heritage badge</p>
+          <p data-i18n="home.hero.panel_body">Since 1991, Israeli-crafted systems powering municipalities, industry, and agri-tech worldwide.</p>
+          <span class="hero__panel-meta" data-i18n="home.hero.panel_meta">Member of Aquatech Group · ISO 9001 · GreenMark</span>
+        </div>
+      </div>
+      <div class="hero__stat hero__stat--uptime">
+        <span class="hero__stat-label" data-i18n="home.hero.uptime_label">Verified uptime</span>
+        <span class="hero__stat-value" data-i18n="home.hero.uptime_value">99.97%</span>
+      </div>
+      <div class="hero__stat hero__stat--savings">
+        <span class="hero__stat-label" data-i18n="home.hero.savings_label">Energy reduction</span>
+        <span class="hero__stat-value" data-i18n="home.hero.savings_value">↓ 32%</span>
+      </div>
       <div class="hero__orb" aria-hidden="true"></div>
       <div class="hero__mesh" aria-hidden="true"></div>
-      <div class="hero__badge" data-i18n="home.hero.badge">Trusted by 1.2K+ projects worldwide</div>
-      <div class="hero__floating hero__floating--primary">
-        <p class="hero__floating-label" data-i18n="home.hero.floating_primary_label">Response Time</p>
-        <p class="hero__floating-value" data-i18n="home.hero.floating_primary_value">15m avg</p>
-      </div>
-      <div class="hero__floating hero__floating--secondary">
-        <p class="hero__floating-label" data-i18n="home.hero.floating_secondary_label">Energy Savings</p>
-        <p class="hero__floating-value" data-i18n="home.hero.floating_secondary_value">▲ 30%</p>
-      </div>
       <div class="hero__glow"></div>
     </div>
   </div>
@@ -35,13 +50,14 @@
 <section class="section section--subtle" aria-label="Trusted partners" data-i18n-aria-label="home.brands.aria_label">
   <div class="container section__inner section__inner--brands">
     <span class="chip chip--ghost section__badge" data-i18n="home.brands.badge">Trusted by innovators</span>
+    <p class="section__subtitle" data-i18n="home.brands.copy">Global infrastructure leaders lean on AquaPump aesthetics and reliability for mission critical distribution.</p>
     <ul class="brand-strip">
-      <li>Veolia</li>
-      <li>Suez</li>
-      <li>Mekorot</li>
-      <li>BlueRiver</li>
-      <li>PureFlow</li>
-      <li>AquaCity</li>
+      <li class="brand-strip__item brand-strip__item--aqua"><img src="{{ url_for('static', filename='img/aquapump-logo-mark.svg') }}" alt="AquaPump" loading="lazy" /></li>
+      <li>Veolia Labs</li>
+      <li>BlueRiver Collective</li>
+      <li>PureFlow Industries</li>
+      <li>FluxGrid</li>
+      <li>Nova Municipal</li>
     </ul>
   </div>
 </section>
@@ -66,6 +82,35 @@
   </div>
 </section>
 
+<section class="section section--surface" id="impact">
+  <div class="container section__inner section__inner--split">
+    <div class="impact-intro">
+      <span class="chip chip--ghost" data-i18n="home.impact.chip">Impact</span>
+      <h2 class="section__title" data-i18n="home.impact.title">Speed, stability, and savings</h2>
+      <p class="section__lead" data-i18n="home.impact.lead">Optimized UI and UX deliver quicker decisions, while our Israeli-built hardware cuts commissioning time and energy consumption across every deployment.</p>
+      <ul class="bullet-list">
+        <li data-i18n="home.impact.bullets.0">Responsive across mobile, tablet, and command centers</li>
+        <li data-i18n="home.impact.bullets.1">Edge and cloud telemetry tuned for sub-second refresh</li>
+        <li data-i18n="home.impact.bullets.2">SEO-first architecture to help prospects find AquaPump</li>
+      </ul>
+    </div>
+    <div class="impact-metrics" role="presentation">
+      <article class="impact-card">
+        <h3 data-i18n="home.impact.metrics.0.title">↓ 42% faster launch</h3>
+        <p data-i18n="home.impact.metrics.0.body">Optimized assets, caching, and structured data for best-in-class speed scores.</p>
+      </article>
+      <article class="impact-card">
+        <h3 data-i18n="home.impact.metrics.1.title">Global uptime mesh</h3>
+        <p data-i18n="home.impact.metrics.1.body">Redundant Israeli-built panels with Aquatech Group field teams on call 24/7.</p>
+      </article>
+      <article class="impact-card">
+        <h3 data-i18n="home.impact.metrics.2.title">SEO-ready structure</h3>
+        <p data-i18n="home.impact.metrics.2.body">Semantic markup, JSON-LD, and keyword-rich copy capture every lead.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
 <section class="section section--surface" id="sustainability">
   <div class="container section__inner section__inner--split">
     <div>
@@ -86,6 +131,41 @@
         <p class="sustainability-card__metric" data-i18n="home.sustainability.metric">18%</p>
         <p class="sustainability-card__caption" data-i18n="home.sustainability.caption">Average efficiency gains vs. legacy systems</p>
         <div class="sustainability-card__wave" aria-hidden="true"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="aquatech">
+  <div class="container section__inner section__inner--split">
+    <div>
+      <span class="chip chip--ghost" data-i18n="home.aquatech.chip">Aquatech Group</span>
+      <h2 class="section__title" data-i18n="home.aquatech.title">Part of Israel's Aquatech Group</h2>
+      <p class="section__lead" data-i18n="home.aquatech.lead">As a proud member of the <a href="https://www.aquatech.co.il/" target="_blank" rel="noopener">Aquatech Group</a>, AquaPump delivers integrated solutions backed by nationwide service teams and decades of Israeli water innovation.</p>
+      <ul class="bullet-list">
+        <li data-i18n="home.aquatech.bullets.0">National coverage with Aquatech service hubs</li>
+        <li data-i18n="home.aquatech.bullets.1">Shared R&amp;D fueling next-gen pump intelligence</li>
+        <li data-i18n="home.aquatech.bullets.2">Seamless hand-off from design to installation</li>
+      </ul>
+      <div class="hero__actions">
+        {{ ui.button('Meet Aquatech Group', variant='primary', href='https://www.aquatech.co.il/', translation_key='home.aquatech.cta') }}
+      </div>
+    </div>
+    <div class="aquatech-card" role="presentation">
+      <p class="aquatech-card__meta" data-i18n="home.aquatech.meta">Aquatech Group · Tel Aviv · Since 1991</p>
+      <div class="aquatech-card__grid">
+        <div>
+          <span data-i18n="home.aquatech.grid.0.label">Projects delivered</span>
+          <strong data-i18n="home.aquatech.grid.0.value">1,200+</strong>
+        </div>
+        <div>
+          <span data-i18n="home.aquatech.grid.1.label">Response time</span>
+          <strong data-i18n="home.aquatech.grid.1.value">&lt;15 min</strong>
+        </div>
+        <div>
+          <span data-i18n="home.aquatech.grid.2.label">Group partners</span>
+          <strong data-i18n="home.aquatech.grid.2.value">22</strong>
+        </div>
       </div>
     </div>
   </div>

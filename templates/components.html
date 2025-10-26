@@ -13,12 +13,21 @@
   {% endif %}
 {% endmacro %}
 
-{% macro nav(active_page='home') %}
+{% macro nav(active_page='home', site=None) %}
 <nav class="nav" aria-label="Primary">
   <div class="container nav__inner">
     <a class="nav__brand" href="/" data-i18n-aria-label="header.brand_home">
-      <span class="brand__mark" aria-hidden="true"></span>
-      <span class="nav__brand-label" id="brand" data-i18n="header.brand">AquaPump</span>
+      <img
+        class="nav__logo"
+        src="{{ url_for('static', filename='img/aquapump-logo-lockup.svg') }}"
+        alt="AquaPump logo"
+        width="188"
+        height="70"
+        loading="eager"
+        fetchpriority="high"
+      />
+      <span class="nav__tagline">{{ site.tagline if site else 'Israeli water technology by Aquatech Group' }}</span>
+      <span class="visually-hidden" id="brand" data-i18n="header.brand">AquaPump</span>
     </a>
     <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" data-i18n-aria-label="header.toggle_nav">
       <span class="visually-hidden" data-i18n="header.toggle_nav">Toggle navigation</span>
@@ -30,7 +39,8 @@
       <ul class="nav__links" role="list">
         <li><a href="/products" id="navProducts" class="nav__link {% if active_page == 'products' %}is-active{% endif %}" data-i18n="header.nav_products">Products</a></li>
         <li><a href="/#technology" id="navTechnology" class="nav__link nav__link--anchor" data-i18n="header.nav_technology">Technology</a></li>
-        <li><a href="/#sustainability" id="navSustainability" class="nav__link nav__link--anchor" data-i18n="header.nav_sustainability">Sustainability</a></li>
+        <li><a href="/#impact" id="navImpact" class="nav__link nav__link--anchor" data-i18n="header.nav_impact">Impact</a></li>
+        <li><a href="/#aquatech" id="navAquatech" class="nav__link nav__link--anchor" data-i18n="header.nav_aquatech">Aquatech Group</a></li>
         <li><a href="/contact" id="navContact" class="nav__link {% if active_page == 'contact' %}is-active{% endif %}" data-i18n="header.nav_contact">Contact</a></li>
       </ul>
       <div class="nav__controls">
@@ -47,14 +57,50 @@
 </nav>
 {% endmacro %}
 
-{% macro footer() %}
-<footer class="footer">
+{% macro footer(site=None) %}
+<footer class="footer" id="aquatech">
   <div class="container footer__inner">
     <div class="footer__brand">
-      <span class="brand__mark" aria-hidden="true"></span>
-      <span data-i18n="footer.brand">AquaPump</span>
+      <img
+        class="footer__logo"
+        src="{{ url_for('static', filename='img/aquapump-logo-lockup.svg') }}"
+        alt="AquaPump"
+        width="180"
+        height="64"
+        loading="lazy"
+      />
+      <p class="footer__tagline">Proudly engineered in Israel as part of the <a href="https://www.aquatech.co.il/" target="_blank" rel="noopener">Aquatech Group</a>.</p>
     </div>
-    <div class="footer__meta" data-i18n="footer.copyright">© AquaPump. All rights reserved.</div>
+    <div class="footer__links">
+      <div>
+        <h3>Company</h3>
+        <ul>
+          <li><a href="/#aquatech">About AquaPump</a></li>
+          <li><a href="/products">Products</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Solutions</h3>
+        <ul>
+          <li><a href="/#technology">Digital Twin Monitoring</a></li>
+          <li><a href="/#impact">Energy Optimization</a></li>
+          <li><a href="/products#technology">Telemetry Platform</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Resources</h3>
+        <ul>
+          <li><a href="/sitemap.xml">Sitemap</a></li>
+          <li><a href="/robots.txt">Robots</a></li>
+          <li><a href="mailto:hello@aquapump.com">Support</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__meta">
+      <span>© {{ current_year }} {{ site.name if site else 'AquaPump' }}. All rights reserved.</span>
+      <span class="footer__meta-badge">ISO 9001 · GreenMark · UL Listed</span>
+    </div>
   </div>
 </footer>
 {% endmacro %}
@@ -77,7 +123,7 @@
 </div>
 {% endmacro %}
 
-{% macro chatbot() %}
+{% macro chatbot(site=None) %}
 <div class="chatbot" data-state="closed">
   <button class="chatbot__toggle" id="chatToggle" type="button" aria-expanded="false" aria-controls="chatWindow" data-i18n-aria-label="chat.toggle_label">
     <span class="chatbot__toggle-icon" aria-hidden="true">💬</span>

@@ -1,30 +1,55 @@
 <!doctype html>
-<html lang="en">
+<html lang="{{ lang | default('en') }}">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Premium pumps and turnkey water systems for industry, agriculture, and infrastructure.">
-  <meta property="og:title" content="AquaPump">
-  <meta property="og:description" content="Industry-Leading Water Solutions">
-  <meta property="og:type" content="website">
-  <meta name="theme-color" content="#1b6fb6">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><circle cx='32' cy='32' r='28' fill='%231b6fb6'/><circle cx='26' cy='26' r='16' fill='%2355c270'/></svg>">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="{{ meta.description }}">
+  <meta name="keywords" content="{{ meta.keywords }}">
+  <meta name="robots" content="{{ meta.robots }}">
+  <meta name="author" content="{{ site.name }}">
+  <meta name="language" content="en">
+  <meta name="color-scheme" content="light only">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="theme-color" content="#0f3a6d">
+  <link rel="canonical" href="{{ meta.canonical }}">
+  <meta property="og:title" content="{{ meta.og_title }}">
+  <meta property="og:description" content="{{ meta.og_description }}">
+  <meta property="og:type" content="{{ meta.og_type }}">
+  <meta property="og:url" content="{{ meta.canonical }}">
+  <meta property="og:site_name" content="{{ site.name }}">
+  <meta property="og:image" content="{{ site.og_image }}">
+  <meta property="og:image:alt" content="AquaPump branding">
+  <meta property="og:locale" content="en_IL">
+  <meta property="og:locale:alternate" content="he_IL">
+  <meta name="twitter:card" content="{{ meta.twitter_card }}">
+  <meta name="twitter:title" content="{{ meta.og_title }}">
+  <meta name="twitter:description" content="{{ meta.og_description }}">
+  <meta name="twitter:image" content="{{ site.og_image }}">
+  <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='img/aquapump-logo-mark.svg') }}">
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <title>{% block title %}AquaPump{% endblock %}</title>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" as="style">
+  <link rel="preload" href="{{ url_for('static', filename='css/style.css') }}" as="style">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap">
+  <title>{{ meta.title }}</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <script type="application/ld+json">
+    {{ structured_data | tojson(indent=2) }}
+  </script>
   {% block head_extra %}{% endblock %}
 </head>
-<body data-page="{{ page_id | default('home') }}">
+<body class="theme--light" data-page="{{ page_id | default('home') }}">
+  <a class="skip-link" href="#main">Skip to content</a>
   {% import 'components.html' as ui %}
-  {{ ui.nav(active_page=page_id | default('home')) }}
+  {{ ui.nav(active_page=page_id | default('home'), site=site) }}
   {% block hero %}{% endblock %}
-  <main class="page-main">
+  <main class="page-main" id="main">
     {% block content %}{% endblock %}
   </main>
-  {{ ui.footer() }}
-  {{ ui.chatbot() }}
+  {{ ui.footer(site=site) }}
+  {{ ui.chatbot(site=site) }}
   <script>
     window.APP_CONFIG = {{ {'supabase': supabase | default({}), 'chatbot': chatbot | default({})} | tojson }};
   </script>
