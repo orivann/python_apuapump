@@ -17,7 +17,7 @@
 
 {% block content %}
 <section class="section">
-  <div class="container section__inner section__inner--narrow">
+  <div class="container section__inner section__inner--split contact-layout">
     <form class="form" id="contactForm" novalidate>
       <div class="form__field">
         <label class="form__label" id="nameLabel" for="name" data-i18n="contact.form.name_label">Full Name</label>
@@ -43,6 +43,26 @@
         <button type="submit" class="btn btn--primary" id="sendBtn" data-i18n="contact.form.submit">Send</button>
       </div>
     </form>
+    <aside class="contact-card" aria-labelledby="contactDirect">
+      <span class="contact-card__badge" data-i18n="contact.details.badge">Direct line</span>
+      <h2 class="contact-card__title" id="contactDirect" data-i18n="contact.details.title">Talk with our engineers</h2>
+      <p class="contact-card__lead" data-i18n="contact.details.lead">We respond in under 15 minutes on business days. Share your scope and we will prepare deployment-ready recommendations.</p>
+      <ul class="contact-card__channels" role="list">
+        <li>
+          <span class="contact-card__channel-label" data-i18n="contact.details.channels.0.label">Service desk</span>
+          <a href="tel:+97239121234" class="contact-card__channel-value" data-i18n="contact.details.channels.0.value">+972 3-912-1234</a>
+        </li>
+        <li>
+          <span class="contact-card__channel-label" data-i18n="contact.details.channels.1.label">WhatsApp</span>
+          <a href="https://wa.me/972501234567" class="contact-card__channel-value" target="_blank" rel="noreferrer" data-i18n="contact.details.channels.1.value">+972 50-123-4567</a>
+        </li>
+        <li>
+          <span class="contact-card__channel-label" data-i18n="contact.details.channels.2.label">Email</span>
+          <a href="mailto:hello@aquapump.com" class="contact-card__channel-value" data-i18n="contact.details.channels.2.value">hello@aquapump.com</a>
+        </li>
+      </ul>
+      <p class="contact-card__meta" data-i18n="contact.details.meta">Looking for API access? Add your keys to the .env file and go live.</p>
+    </aside>
   </div>
 </section>
 {% endblock %}

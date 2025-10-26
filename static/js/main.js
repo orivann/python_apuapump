@@ -19,10 +19,16 @@
   const chatbotConfig = appConfig.chatbot || {};
   const chatbotReady = Boolean(chatbotConfig.api_key_set);
 
-  let lang = localStorage.getItem('lang') || 'en';
-  let theme = localStorage.getItem('theme') || 'light';
+  const DEFAULT_LANG = 'en';
+  const DEFAULT_THEME = 'light';
+
+  let lang = DEFAULT_LANG;
+  let theme = DEFAULT_THEME;
   let langRequestToken = 0;
   let translations = {};
+
+  localStorage.setItem('lang', DEFAULT_LANG);
+  localStorage.setItem('theme', DEFAULT_THEME);
 
   langBtn?.setAttribute('dir', 'ltr');
 
