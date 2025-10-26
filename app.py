@@ -209,6 +209,48 @@ def products():
     return render_template("products.html", **base_context("products", meta=meta))
 
 
+@app.route("/technology")
+def technology():
+    meta = {
+        "title": "AquaPump Technology — Israeli R&D and Digital Innovation",
+        "description": (
+            "Dive into AquaPump's Israeli-engineered R&D, AI diagnostics, and lifecycle telemetry platform backed by the Aquatech Group."
+        ),
+        "keywords": (
+            "AquaPump technology, Israeli water innovation, Aquatech R&D, digital twin pumps, predictive maintenance"
+        ),
+    }
+    return render_template("technology.html", **base_context("technology", meta=meta))
+
+
+@app.route("/impact")
+def impact():
+    meta = {
+        "title": "AquaPump Impact — Case Studies and Sustainability Wins",
+        "description": (
+            "See how AquaPump delivers measurable impact with Israeli-led deployments, case studies, and sustainability achievements across industries."
+        ),
+        "keywords": (
+            "AquaPump impact, Israeli case studies, Aquatech sustainability, water technology metrics"
+        ),
+    }
+    return render_template("impact.html", **base_context("impact", meta=meta))
+
+
+@app.route("/aquatech-group")
+def aquatech_group():
+    meta = {
+        "title": "Aquatech Group — AquaPump's Israeli Heritage",
+        "description": (
+            "Discover AquaPump's role inside Israel's Aquatech Group, our heritage, global reach, and careers shaping the future of water technology."
+        ),
+        "keywords": (
+            "Aquatech Group, Israeli water heritage, AquaPump careers, global water solutions"
+        ),
+    }
+    return render_template("aquatech.html", **base_context("aquatech", meta=meta))
+
+
 @app.route("/contact")
 def contact():
     meta = {

@@ -23,6 +23,29 @@
   },
   "footer": {
     "brand": "AquaPump",
+    "tagline": "Israeli engineering. Aquatech Group strength.",
+    "meta": {
+      "hq": "HQ: Tel Aviv, Israel",
+      "phone": "+972 3-912-1234",
+      "email": "hello@aquapump.com"
+    },
+    "links": {
+      "company": "Company",
+      "technology": "Technology",
+      "impact": "Impact",
+      "aquatech": "Aquatech Group",
+      "contact": "Contact",
+      "resources": "Resources",
+      "products": "Product Catalog",
+      "case_studies": "Case Studies",
+      "downloads": "Downloads",
+      "sitemap": "Sitemap"
+    },
+    "cta": {
+      "title": "Ready to accelerate deployment?",
+      "body": "Schedule an engineering consult and receive a tailored AquaPump roadmap in under 48 hours.",
+      "button": "Book consultation"
+    },
     "copyright": "© AquaPump. All rights reserved."
   },
   "home": {
@@ -204,6 +227,261 @@
       "cta_button": "Talk to engineering",
       "meta": "Powered by AquaOS™ orchestration layer",
       "caption": "Add credentials, containerize, deploy. That’s it."
+    }
+  },
+  "technology": {
+    "hero": {
+      "chip": "Technology",
+      "title": "Israeli R&D engineered for reliability",
+      "lead": "From Tel Aviv labs to global field deployments, AquaPump fuses premium industrial design with live telemetry, AI diagnostics, and edge-ready automation.",
+      "primary": "Download specs",
+      "secondary": "Speak with R&D"
+    },
+    "overview": {
+      "chip": "Platform stack",
+      "title": "Architecture built for speed & scale",
+      "lead": "Every AquaPump deployment layers Israeli-crafted hardware with a composable software stack: edge controllers, secure APIs, and a Supabase-ready data fabric.",
+      "points": [
+        "Next.js experience layer with ISR and localized routing",
+        "Serverless API mesh on AWS Lambda & FastAPI microservices",
+        "Supabase Postgres + Redis cache for millisecond telemetry"
+      ],
+      "layers": [
+        "Edge PLCs & sensors",
+        "Secure IoT Gateway",
+        "Supabase Streams",
+        "Analytics & Dashboards",
+        "AI Co-pilot"
+      ]
+    },
+    "innovation": {
+      "chip": "Innovation cycle",
+      "title": "Tel Aviv labs to live deployment",
+      "lead": "Our R&D sprint cadence blends Aquatech Group manufacturing with agile firmware updates, ensuring rapid prototyping and bulletproof releases.",
+      "items": [
+        {
+          "title": "Discovery",
+          "body": "Industry workshops in Israel uncover requirements, compliance, and integration touchpoints."
+        },
+        {
+          "title": "Digital twin modelling",
+          "body": "Rapid CAD + CFD modelling, followed by Supabase-linked simulations to validate edge conditions."
+        },
+        {
+          "title": "Pilot & telemetry",
+          "body": "Edge nodes stream encrypted data to our observability layer, ensuring sub-second visibility."
+        },
+        {
+          "title": "Scale & iterate",
+          "body": "CI/CD pushes updates globally with feature flags, analytics, and guardrails baked in."
+        }
+      ]
+    },
+    "capabilities": {
+      "chip": "Core capabilities",
+      "title": "Designed for mission-critical uptime",
+      "lead": "Each module is modular, API-first, and built to integrate with future AI co-pilots, CRM systems, and data lakes.",
+      "cards": [
+        {
+          "title": "Telemetry OS",
+          "body": "Event-driven data ingestion, Supabase replication, and real-time dashboards optimized for FCP <1.2s."
+        },
+        {
+          "title": "AI diagnostics",
+          "body": "Predict failures with Aquatech-trained models feeding the AquaBot assistant and maintenance workflows."
+        },
+        {
+          "title": "Security lattice",
+          "body": "Zero-trust policies, audit logging, CSP enforcement, and encrypted secrets across every environment."
+        },
+        {
+          "title": "Edge orchestration",
+          "body": "Containerized firmware pipelines enable rollbacks, over-the-air updates, and offline-first resilience."
+        }
+      ]
+    },
+    "downloads": {
+      "chip": "Downloads",
+      "title": "Specification library",
+      "lead": "Access product spec sheets, BIM files, and cybersecurity policies curated for engineering partners.",
+      "cta_primary": "Get engineering pack",
+      "cta_secondary": "View API schema",
+      "items": [
+        {
+          "title": "Municipal booster BIM",
+          "body": "IFC + Revit assets with localized pressure settings and telemetry points."
+        },
+        {
+          "title": "Security posture brief",
+          "body": "CSP, WAF, IAM, and audit controls aligned with Israeli and EU standards."
+        },
+        {
+          "title": "API reference",
+          "body": "REST & GraphQL endpoints with webhook recipes for CRM and ERP systems."
+        }
+      ]
+    }
+  },
+  "impact": {
+    "hero": {
+      "chip": "Impact",
+      "title": "Outcomes engineered in Israel, delivered worldwide",
+      "lead": "Explore how AquaPump and the Aquatech Group transform critical infrastructure with measurable uptime, sustainability, and conversion gains.",
+      "primary": "View case studies",
+      "secondary": "Get project audit"
+    },
+    "metrics": {
+      "chip": "Proof points",
+      "title": "Performance benchmarks we guarantee",
+      "lead": "Measured across mobile and desktop, our digital and physical stack keeps conversions high and operational costs low.",
+      "stats": [
+        { "k": "99.97%", "v": "Uptime across fleets" },
+        { "k": "↓32%", "v": "Energy usage" },
+        { "k": "↑45%", "v": "Lead conversion" },
+        { "k": "1.8s", "v": "Largest Contentful Paint" }
+      ]
+    },
+    "case_studies": {
+      "chip": "Case studies",
+      "title": "Real projects. Real numbers.",
+      "lead": "From Israeli municipalities to global agritech leaders, AquaPump delivers measurable performance improvements.",
+      "items": [
+        {
+          "tag": "Municipal",
+          "title": "Dan Region pumping overhaul",
+          "body": "Converted 18 pumping stations to AquaPump telemetry. Achieved 43% faster fault detection and 28% drop in truck rolls.",
+          "metrics": [
+            { "value": "↓28%", "label": "Maintenance costs" },
+            { "value": "↓8hrs", "label": "Average outage" }
+          ]
+        },
+        {
+          "tag": "Industry",
+          "title": "Galilee food processing plant",
+          "body": "VFD retrofits with AquaPump analytics cut energy bills by 35% while keeping CIP cycles within ±1% pressure variance.",
+          "metrics": [
+            { "value": "↓35%", "label": "Energy spend" },
+            { "value": "↑22%", "label": "Output capacity" }
+          ]
+        },
+        {
+          "tag": "Agriculture",
+          "title": "Negev smart irrigation",
+          "body": "Deployed remote sensing with AquaBot insights. Water use dropped 31% while yields grew 18% year-over-year.",
+          "metrics": [
+            { "value": "↓31%", "label": "Water usage" },
+            { "value": "↑18%", "label": "Yield increase" }
+          ]
+        }
+      ]
+    },
+    "sustainability": {
+      "chip": "Sustainability",
+      "title": "Sustainable by design",
+      "lead": "Our roadmap aligns with Israeli GreenMark compliance and global ESG standards.",
+      "timeline": [
+        "2024 · 100% renewable energy powering our Israeli manufacturing partners.",
+        "2025 · Lifecycle analytics reduce carbon emissions per project by 22%.",
+        "2026 · Circular refurbishment program extends hardware life by 40%."
+      ],
+      "score": {
+        "title": "Impact Index",
+        "items": [
+          { "label": "Scope 1 emissions", "value": "Net zero" },
+          { "label": "Water recovered", "value": "2.1B litres" },
+          { "label": "Communities served", "value": "58 municipalities" }
+        ]
+      }
+    },
+    "testimonials": {
+      "chip": "Voices",
+      "title": "Trusted by leaders",
+      "items": [
+        {
+          "quote": "“AquaPump gave us the polish of a consumer brand with the telemetry rigor we needed. Launch took weeks, not months.”",
+          "meta": "Yael Cohen — CTO, Tel Aviv Water Authority"
+        },
+        {
+          "quote": "“The Aquatech Group collaboration means we get Israeli expertise onsite plus global logistics. It’s a powerhouse.”",
+          "meta": "Rafael Adler — COO, Negev AgriTech"
+        }
+      ]
+    }
+  },
+  "aquatech": {
+    "hero": {
+      "chip": "Aquatech Group",
+      "title": "Israeli heritage. Global water leadership.",
+      "lead": "AquaPump is a flagship company inside the Aquatech Group. Together we combine Tel Aviv innovation with a worldwide network of experts.",
+      "primary": "Explore careers",
+      "secondary": "Visit Aquatech Group"
+    },
+    "heritage": {
+      "chip": "Heritage",
+      "title": "Built in Israel since 1991",
+      "lead": "Our founding teams engineered the nation’s earliest desalination control systems. Today we channel that experience into digitized pumping ecosystems.",
+      "timeline": [
+        "1991 · Aquatech Group founded in Tel Aviv to accelerate water resilience.",
+        "2002 · AquaPump launches precision booster line serving national infrastructure.",
+        "2018 · Digital twin monitoring rolls out across all new deployments."
+      ],
+      "meta": "Aquatech Group at a glance",
+      "metrics": [
+        { "label": "Experts worldwide", "value": "640+" },
+        { "label": "Countries served", "value": "32" },
+        { "label": "Active patents", "value": "48" }
+      ]
+    },
+    "network": {
+      "chip": "Global network",
+      "title": "Rapid response, everywhere",
+      "lead": "Our Israeli HQ orchestrates global field teams across Europe, North America, and APAC.",
+      "points": [
+        "24/7 command center in Tel Aviv monitors telemetry",
+        "Regional service hubs in Milan, Houston, Bengaluru, and Sydney",
+        "Shared knowledge base with multilingual playbooks"
+      ]
+    },
+    "careers": {
+      "chip": "Careers",
+      "title": "Join a team engineering the future of water",
+      "lead": "We hire builders who thrive at the intersection of industrial design, software, and sustainability.",
+      "items": [
+        {
+          "title": "Systems engineer — Tel Aviv",
+          "body": "Lead end-to-end pump deployments, integrating telemetry and AI diagnostics.",
+          "cta": "Apply now"
+        },
+        {
+          "title": "Full-stack developer — Hybrid",
+          "body": "Build Next.js experiences, Supabase integrations, and analytics dashboards.",
+          "cta": "Apply now"
+        },
+        {
+          "title": "Field technician — Global",
+          "body": "Deploy and maintain AquaPump systems with onsite Aquatech Group teams.",
+          "cta": "Apply now"
+        }
+      ]
+    },
+    "values": {
+      "chip": "Values",
+      "title": "Culture that powers innovation",
+      "lead": "We operate with transparency, precision, and a relentless focus on customer success.",
+      "items": [
+        {
+          "title": "Israeli ingenuity",
+          "body": "Multidisciplinary squads iterate quickly, grounded in Aquatech’s engineering legacy."
+        },
+        {
+          "title": "Sustainable outcomes",
+          "body": "Every decision considers water stewardship, energy efficiency, and social impact."
+        },
+        {
+          "title": "Customer obsession",
+          "body": "We co-create with partners, offering proactive support and real-time telemetry insights."
+        }
+      ]
     }
   },
   "contact": {

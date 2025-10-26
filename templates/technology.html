@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+{% import 'components.html' as ui %}
+
+{% block hero %}
+<header class="hero hero--subpage hero--technology">
+  <div class="container hero__inner">
+    <div class="hero__content">
+      <span class="chip chip--ghost" data-i18n="technology.hero.chip">Technology</span>
+      <h1 class="hero__title" data-i18n="technology.hero.title">Israeli R&amp;D engineered for reliability</h1>
+      <p class="hero__lead" data-i18n="technology.hero.lead">From Tel Aviv labs to global field deployments, AquaPump fuses premium industrial design with live telemetry, AI diagnostics, and edge-ready automation.</p>
+      <div class="hero__actions">
+        {{ ui.button('Download specs', variant='primary', href='#downloads', translation_key='technology.hero.primary') }}
+        {{ ui.button('Speak with R&D', variant='outline', href='/contact', translation_key='technology.hero.secondary') }}
+      </div>
+    </div>
+  </div>
+  <div class="hero__wave" aria-hidden="true"></div>
+</header>
+{% endblock %}
+
+{% block content %}
+<section class="section">
+  <div class="container section__inner section__inner--split technology-overview">
+    <div>
+      <span class="chip chip--ghost" data-i18n="technology.overview.chip">Platform stack</span>
+      <h2 class="section__title" data-i18n="technology.overview.title">Architecture built for speed &amp; scale</h2>
+      <p class="section__lead" data-i18n="technology.overview.lead">Every AquaPump deployment layers Israeli-crafted hardware with a composable software stack: edge controllers, secure APIs, and a Supabase-ready data fabric.</p>
+      <ul class="bullet-list">
+        <li data-i18n="technology.overview.points.0">Next.js experience layer with ISR and localized routing</li>
+        <li data-i18n="technology.overview.points.1">Serverless API mesh on AWS Lambda &amp; FastAPI microservices</li>
+        <li data-i18n="technology.overview.points.2">Supabase Postgres + Redis cache for millisecond telemetry</li>
+      </ul>
+    </div>
+    <div class="tech-diagram" aria-hidden="true">
+      <div class="tech-diagram__layer" data-i18n="technology.overview.layers.0">Edge PLCs &amp; sensors</div>
+      <div class="tech-diagram__layer" data-i18n="technology.overview.layers.1">Secure IoT Gateway</div>
+      <div class="tech-diagram__layer" data-i18n="technology.overview.layers.2">Supabase Streams</div>
+      <div class="tech-diagram__layer" data-i18n="technology.overview.layers.3">Analytics &amp; Dashboards</div>
+      <div class="tech-diagram__layer" data-i18n="technology.overview.layers.4">AI Co-pilot</div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--surface" id="innovation">
+  <div class="container section__inner">
+    <div class="section__header">
+      <span class="chip chip--ghost" data-i18n="technology.innovation.chip">Innovation cycle</span>
+      <h2 class="section__title" data-i18n="technology.innovation.title">Tel Aviv labs to live deployment</h2>
+      <p class="section__lead" data-i18n="technology.innovation.lead">Our R&amp;D sprint cadence blends Aquatech Group manufacturing with agile firmware updates, ensuring rapid prototyping and bulletproof releases.</p>
+    </div>
+    <ol class="timeline" role="list">
+      <li class="timeline__item">
+        <h3 data-i18n="technology.innovation.items.0.title">Discovery</h3>
+        <p data-i18n="technology.innovation.items.0.body">Industry workshops in Israel uncover requirements, compliance, and integration touchpoints.</p>
+      </li>
+      <li class="timeline__item">
+        <h3 data-i18n="technology.innovation.items.1.title">Digital twin modelling</h3>
+        <p data-i18n="technology.innovation.items.1.body">Rapid CAD + CFD modelling, followed by Supabase-linked simulations to validate edge conditions.</p>
+      </li>
+      <li class="timeline__item">
+        <h3 data-i18n="technology.innovation.items.2.title">Pilot &amp; telemetry</h3>
+        <p data-i18n="technology.innovation.items.2.body">Edge nodes stream encrypted data to our observability layer, ensuring sub-second visibility.</p>
+      </li>
+      <li class="timeline__item">
+        <h3 data-i18n="technology.innovation.items.3.title">Scale &amp; iterate</h3>
+        <p data-i18n="technology.innovation.items.3.body">CI/CD pushes updates globally with feature flags, analytics, and guardrails baked in.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="section" id="capabilities">
+  <div class="container section__inner">
+    <div class="section__header">
+      <span class="chip chip--ghost" data-i18n="technology.capabilities.chip">Core capabilities</span>
+      <h2 class="section__title" data-i18n="technology.capabilities.title">Designed for mission-critical uptime</h2>
+      <p class="section__lead" data-i18n="technology.capabilities.lead">Each module is modular, API-first, and built to integrate with future AI co-pilots, CRM systems, and data lakes.</p>
+    </div>
+    <div class="card-grid">
+      <article class="data-card">
+        <h3 data-i18n="technology.capabilities.cards.0.title">Telemetry OS</h3>
+        <p data-i18n="technology.capabilities.cards.0.body">Event-driven data ingestion, Supabase replication, and real-time dashboards optimized for FCP &lt;1.2s.</p>
+      </article>
+      <article class="data-card">
+        <h3 data-i18n="technology.capabilities.cards.1.title">AI diagnostics</h3>
+        <p data-i18n="technology.capabilities.cards.1.body">Predict failures with Aquatech-trained models feeding the AquaBot assistant and maintenance workflows.</p>
+      </article>
+      <article class="data-card">
+        <h3 data-i18n="technology.capabilities.cards.2.title">Security lattice</h3>
+        <p data-i18n="technology.capabilities.cards.2.body">Zero-trust policies, audit logging, CSP enforcement, and encrypted secrets across every environment.</p>
+      </article>
+      <article class="data-card">
+        <h3 data-i18n="technology.capabilities.cards.3.title">Edge orchestration</h3>
+        <p data-i18n="technology.capabilities.cards.3.body">Containerized firmware pipelines enable rollbacks, over-the-air updates, and offline-first resilience.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section section--surface" id="downloads">
+  <div class="container section__inner section__inner--split downloads">
+    <div>
+      <span class="chip chip--ghost" data-i18n="technology.downloads.chip">Downloads</span>
+      <h2 class="section__title" data-i18n="technology.downloads.title">Specification library</h2>
+      <p class="section__lead" data-i18n="technology.downloads.lead">Access product spec sheets, BIM files, and cybersecurity policies curated for engineering partners.</p>
+      <div class="downloads__actions">
+        {{ ui.button('Get engineering pack', variant='primary', href='/contact', translation_key='technology.downloads.cta_primary') }}
+        {{ ui.button('View API schema', variant='ghost', href='mailto:hello@aquapump.com?subject=AquaPump%20API%20Schema', translation_key='technology.downloads.cta_secondary') }}
+      </div>
+    </div>
+    <div class="downloads__list" role="list">
+      <article class="downloads__item">
+        <h3 data-i18n="technology.downloads.items.0.title">Municipal booster BIM</h3>
+        <p data-i18n="technology.downloads.items.0.body">IFC + Revit assets with localized pressure settings and telemetry points.</p>
+      </article>
+      <article class="downloads__item">
+        <h3 data-i18n="technology.downloads.items.1.title">Security posture brief</h3>
+        <p data-i18n="technology.downloads.items.1.body">CSP, WAF, IAM, and audit controls aligned with Israeli and EU standards.</p>
+      </article>
+      <article class="downloads__item">
+        <h3 data-i18n="technology.downloads.items.2.title">API reference</h3>
+        <p data-i18n="technology.downloads.items.2.body">REST &amp; GraphQL endpoints with webhook recipes for CRM and ERP systems.</p>
+      </article>
+    </div>
+  </div>
+</section>
+{% endblock %}

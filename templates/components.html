@@ -36,9 +36,9 @@
     <div class="nav__menu" id="navMenu">
       <ul class="nav__links" role="list">
         <li><a href="/products" id="navProducts" class="nav__link {% if active_page == 'products' %}is-active{% endif %}" data-i18n="header.nav_products">Products</a></li>
-        <li><a href="/#technology" id="navTechnology" class="nav__link nav__link--anchor" data-i18n="header.nav_technology">Technology</a></li>
-        <li><a href="/#impact" id="navImpact" class="nav__link nav__link--anchor" data-i18n="header.nav_impact">Impact</a></li>
-        <li><a href="/#aquatech" id="navAquatech" class="nav__link nav__link--anchor" data-i18n="header.nav_aquatech">Aquatech Group</a></li>
+        <li><a href="/technology" id="navTechnology" class="nav__link {% if active_page == 'technology' %}is-active{% endif %}" data-i18n="header.nav_technology">Technology</a></li>
+        <li><a href="/impact" id="navImpact" class="nav__link {% if active_page == 'impact' %}is-active{% endif %}" data-i18n="header.nav_impact">Impact</a></li>
+        <li><a href="/aquatech-group" id="navAquatech" class="nav__link {% if active_page == 'aquatech' %}is-active{% endif %}" data-i18n="header.nav_aquatech">Aquatech Group</a></li>
         <li><a href="/contact" id="navContact" class="nav__link {% if active_page == 'contact' %}is-active{% endif %}" data-i18n="header.nav_contact">Contact</a></li>
       </ul>
       <div class="nav__controls">
@@ -63,10 +63,42 @@
         class="footer__logo"
         src="{{ url_for('static', filename='img/aquapump-logo-lockup.svg') }}"
         alt="AquaPump"
-        width="180"
-        height="64"
+        width="200"
+        height="70"
         loading="lazy"
       />
+      <p class="footer__tagline" data-i18n="footer.tagline">Israeli engineering. Aquatech Group strength.</p>
+      <ul class="footer__meta" role="list">
+        <li data-i18n="footer.meta.hq">HQ: Tel Aviv, Israel</li>
+        <li><a href="tel:+97239121234" data-i18n="footer.meta.phone">+972 3-912-1234</a></li>
+        <li><a href="mailto:hello@aquapump.com" data-i18n="footer.meta.email">hello@aquapump.com</a></li>
+      </ul>
+    </div>
+    <div class="footer__nav" aria-label="Footer">
+      <div>
+        <h3 data-i18n="footer.links.company">Company</h3>
+        <ul>
+          <li><a href="/technology" data-i18n="footer.links.technology">Technology</a></li>
+          <li><a href="/impact" data-i18n="footer.links.impact">Impact</a></li>
+          <li><a href="/aquatech-group" data-i18n="footer.links.aquatech">Aquatech Group</a></li>
+          <li><a href="/contact" data-i18n="footer.links.contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 data-i18n="footer.links.resources">Resources</h3>
+        <ul>
+          <li><a href="/products" data-i18n="footer.links.products">Product Catalog</a></li>
+          <li><a href="/impact#case-studies" data-i18n="footer.links.case_studies">Case Studies</a></li>
+          <li><a href="/technology#downloads" data-i18n="footer.links.downloads">Downloads</a></li>
+          <li><a href="/sitemap.xml" data-i18n="footer.links.sitemap">Sitemap</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__cta">
+      <h3 data-i18n="footer.cta.title">Ready to accelerate deployment?</h3>
+      <p data-i18n="footer.cta.body">Schedule an engineering consult and receive a tailored AquaPump roadmap in under 48 hours.</p>
+      <a class="btn btn--primary" href="/contact" data-i18n="footer.cta.button">Book consultation</a>
+      <p class="footer__legal" data-i18n="footer.copyright">© {{ current_year }} {{ site.name }}. All rights reserved.</p>
     </div>
   </div>
 </footer>
