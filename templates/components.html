@@ -17,8 +17,15 @@
 <nav class="nav" aria-label="Primary">
   <div class="container nav__inner">
     <a class="nav__brand" href="/" data-i18n-aria-label="header.brand_home">
-      <span class="brand__mark" aria-hidden="true"></span>
-      <span class="nav__brand-label" id="brand" data-i18n="header.brand">AquaPump</span>
+      <img
+        class="nav__logo"
+        src="{{ url_for('static', filename='img/aquapump-logo-lockup.svg') }}"
+        alt="AquaPump logo"
+        width="188"
+        height="70"
+        loading="lazy"
+      />
+      <span class="visually-hidden" id="brand" data-i18n="header.brand">AquaPump</span>
     </a>
     <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" data-i18n-aria-label="header.toggle_nav">
       <span class="visually-hidden" data-i18n="header.toggle_nav">Toggle navigation</span>
@@ -51,8 +58,14 @@
 <footer class="footer">
   <div class="container footer__inner">
     <div class="footer__brand">
-      <span class="brand__mark" aria-hidden="true"></span>
-      <span data-i18n="footer.brand">AquaPump</span>
+      <img
+        class="footer__logo"
+        src="{{ url_for('static', filename='img/aquapump-logo-lockup.svg') }}"
+        alt="AquaPump"
+        width="180"
+        height="64"
+        loading="lazy"
+      />
     </div>
     <div class="footer__meta" data-i18n="footer.copyright">© AquaPump. All rights reserved.</div>
   </div>

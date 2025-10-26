@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "AquaPump — Industry-Leading Water Solutions",
-    "description": "Premium pumps and turnkey water systems for industry, agriculture, municipalities & infrastructure."
+    "title": "AquaPump — Precision Water Intelligence",
+    "description": "Apple-level industrial design meets Tesla-grade analytics. Premium pump systems ready for Supabase, AI, and smart telemetry."
   },
   "header": {
     "brand": "AquaPump",
@@ -25,20 +25,28 @@
   },
   "home": {
     "hero": {
-      "chip": "Industry-Leading Water Solutions",
-      "title": "Your Pump, Our Solution",
-      "subtitle": "30+ years of excellence in water system solutions. Leading provider of pumps for industry, agriculture, municipalities, and infrastructure.",
-      "primary": "Our Products",
-      "secondary": "Get Quote",
-      "badge": "Trusted by 1.2K+ projects worldwide",
-      "floating_primary_label": "Response Time",
-      "floating_primary_value": "15m avg",
-      "floating_secondary_label": "Energy Savings",
-      "floating_secondary_value": "▲ 30%"
+      "crest": "Precision water intelligence",
+      "title": "Future-proof water infrastructure.",
+      "subtitle": "We design, deploy, and maintain premium pump systems for critical industries with signature Apple-level finish and Tesla-grade performance analytics.",
+      "primary": "Explore platform",
+      "secondary": "Talk to engineering",
+      "features": [
+        "Digital twin dashboards out of the box",
+        "Supabase-ready event streaming for instant alerts",
+        "Sustainable builds with premium industrial design"
+      ],
+      "panel_title": "AquaPump heritage badge",
+      "panel_body": "Since 1991 we have delivered silent efficiency for municipal, industrial, and agri-tech partners.",
+      "panel_meta": "ISO 9001 · GreenMark · UL Listed",
+      "uptime_label": "Verified uptime",
+      "uptime_value": "99.97%",
+      "savings_label": "Energy reduction",
+      "savings_value": "↓ 32%"
     },
     "brands": {
       "badge": "Trusted by innovators",
-      "aria_label": "Trusted partners"
+      "aria_label": "Trusted partners",
+      "copy": "Global infrastructure leaders lean on AquaPump aesthetics and reliability for mission critical distribution."
     },
     "sections": {
       "expertise_chip": "Expertise",
@@ -92,22 +100,59 @@
   },
   "products": {
     "chip": "Catalog",
-    "title": "Featured Products",
-    "lead": "Engineered systems delivering reliable pressure, efficiency, and uptime in the harshest conditions.",
+    "title": "Signature systems by AquaPump",
+    "lead": "Every unit ships with pristine finishes, smart telemetry, and energy-smart configurations ready for your Supabase keys.",
     "items": [
       {
         "title": "Smart Pump SAJ",
-        "desc": "High-efficiency pump for municipal and industrial use."
+        "desc": "High-efficiency pump for municipal and industrial use.",
+        "tag": "Municipal",
+        "features": [
+          "Flow 480 m³/h",
+          "Dual-drive redundancy",
+          "Supabase event hooks baked in"
+        ],
+        "status": "Ships in 6 weeks",
+        "cta": "Book a design consult"
       },
       {
         "title": "Industrial Booster",
-        "desc": "Energy-saving variable-frequency drive for agriculture."
+        "desc": "Energy-saving variable-frequency drive for agriculture.",
+        "tag": "Industry",
+        "features": [
+          "Active harmonic filtering",
+          "Analytics-ready Modbus/TCP",
+          "Stainless enclosure with IP67 rating"
+        ],
+        "status": "Built-to-order: 4 weeks",
+        "cta": "Schedule a factory test"
       },
       {
         "title": "Wastewater Pro",
-        "desc": "Robust solids-handling pump for infrastructure projects."
+        "desc": "Robust solids-handling pump for infrastructure projects.",
+        "tag": "Infrastructure",
+        "features": [
+          "Ceramic-coated impellers",
+          "Self-cleaning volute geometry",
+          "24/7 remote diagnostics"
+        ],
+        "status": "Always-on service SLA",
+        "cta": "Request turnkey proposal"
       }
-    ]
+    ],
+    "cta": {
+      "badge": "Platform",
+      "title": "Connect the field to your command center",
+      "lead": "Our control suite ships ready to plug into Supabase, Azure, or AWS so your telemetry, customer portal, and billing flows are a configuration away.",
+      "bullets": [
+        "Realtime dashboards and alerts API",
+        "Digital twin modelling & predictive maintenance",
+        "Premium finishes, corrosion-proof, installer friendly"
+      ],
+      "cta_button": "Talk to engineering",
+      "meta": "Powered by AquaOS™ orchestration layer",
+      "caption": "Add credentials, containerize, deploy. That’s it."
+    }
   },
   "contact": {
     "chip": "Let’s talk",
@@ -134,6 +179,26 @@
       "validation": {
         "phone": "Please provide a valid phone number."
       }
+    },
+    "details": {
+      "badge": "Direct line",
+      "title": "Talk with our engineers",
+      "lead": "We respond in under 15 minutes on business days. Share your scope and we will prepare deployment-ready recommendations.",
+      "channels": [
+        {
+          "label": "Service desk",
+          "value": "+972 3-912-1234"
+        },
+        {
+          "label": "WhatsApp",
+          "value": "+972 50-123-4567"
+        },
+        {
+          "label": "Email",
+          "value": "hello@aquapump.com"
+        }
+      ],
+      "meta": "Looking for API access? Add your keys to the .env file and go live."
     }
   },
   "chat": {

@@ -7,8 +7,8 @@
   <div class="container hero__inner">
     <div class="hero__content">
       <span class="chip chip--ghost" data-i18n="products.chip">Catalog</span>
-      <h1 class="hero__title" id="productsTitle" data-i18n="products.title">Featured Products</h1>
-      <p class="hero__lead" data-i18n="products.lead">Engineered systems delivering reliable pressure, efficiency, and uptime in the harshest conditions.</p>
+      <h1 class="hero__title" id="productsTitle" data-i18n="products.title">Signature systems by AquaPump</h1>
+      <p class="hero__lead" data-i18n="products.lead">Every unit ships with pristine finishes, smart telemetry, and energy-smart configurations ready for your Supabase keys.</p>
     </div>
   </div>
   <div class="hero__wave" aria-hidden="true"></div>
@@ -18,19 +18,78 @@
 {% block content %}
 <section class="section">
   <div class="container section__inner">
-    <div class="feature-grid">
-      <article class="feature">
-        <h3 data-i18n="products.items.0.title">Smart Pump SAJ</h3>
-        <p data-i18n="products.items.0.desc">High-efficiency pump for municipal and industrial use.</p>
+    <div class="product-grid">
+      <article class="product-card">
+        <header class="product-card__header">
+          <span class="product-card__tag" data-i18n="products.items.0.tag">Municipal</span>
+          <h3 data-i18n="products.items.0.title">Smart Pump SAJ</h3>
+        </header>
+        <p class="product-card__lead" data-i18n="products.items.0.desc">High-efficiency pump for municipal and industrial use.</p>
+        <ul class="product-card__specs">
+          <li data-i18n="products.items.0.features.0">Flow 480 m³/h</li>
+          <li data-i18n="products.items.0.features.1">Dual-drive redundancy</li>
+          <li data-i18n="products.items.0.features.2">Supabase event hooks baked in</li>
+        </ul>
+        <div class="product-card__footer">
+          <span class="product-card__status" data-i18n="products.items.0.status">Ships in 6 weeks</span>
+          <a class="product-card__cta" href="/contact" data-i18n="products.items.0.cta">Book a design consult</a>
+        </div>
       </article>
-      <article class="feature">
-        <h3 data-i18n="products.items.1.title">Industrial Booster</h3>
-        <p data-i18n="products.items.1.desc">Energy-saving variable-frequency drive for agriculture.</p>
+      <article class="product-card">
+        <header class="product-card__header">
+          <span class="product-card__tag" data-i18n="products.items.1.tag">Industry</span>
+          <h3 data-i18n="products.items.1.title">Industrial Booster</h3>
+        </header>
+        <p class="product-card__lead" data-i18n="products.items.1.desc">Energy-saving variable-frequency drive for agriculture.</p>
+        <ul class="product-card__specs">
+          <li data-i18n="products.items.1.features.0">Active harmonic filtering</li>
+          <li data-i18n="products.items.1.features.1">Analytics-ready Modbus/TCP</li>
+          <li data-i18n="products.items.1.features.2">Stainless enclosure with IP67 rating</li>
+        </ul>
+        <div class="product-card__footer">
+          <span class="product-card__status" data-i18n="products.items.1.status">Built-to-order: 4 weeks</span>
+          <a class="product-card__cta" href="/contact" data-i18n="products.items.1.cta">Schedule a factory test</a>
+        </div>
       </article>
-      <article class="feature">
-        <h3 data-i18n="products.items.2.title">Wastewater Pro</h3>
-        <p data-i18n="products.items.2.desc">Robust solids-handling pump for infrastructure projects.</p>
+      <article class="product-card">
+        <header class="product-card__header">
+          <span class="product-card__tag" data-i18n="products.items.2.tag">Infrastructure</span>
+          <h3 data-i18n="products.items.2.title">Wastewater Pro</h3>
+        </header>
+        <p class="product-card__lead" data-i18n="products.items.2.desc">Robust solids-handling pump for infrastructure projects.</p>
+        <ul class="product-card__specs">
+          <li data-i18n="products.items.2.features.0">Ceramic-coated impellers</li>
+          <li data-i18n="products.items.2.features.1">Self-cleaning volute geometry</li>
+          <li data-i18n="products.items.2.features.2">24/7 remote diagnostics</li>
+        </ul>
+        <div class="product-card__footer">
+          <span class="product-card__status" data-i18n="products.items.2.status">Always-on service SLA</span>
+          <a class="product-card__cta" href="/contact" data-i18n="products.items.2.cta">Request turnkey proposal</a>
+        </div>
       </article>
+    </div>
+  </div>
+</section>
+
+<section class="section section--surface">
+  <div class="container section__inner section__inner--split product-cta">
+    <div>
+      <span class="chip chip--ghost" data-i18n="products.cta.badge">Platform</span>
+      <h2 class="section__title" data-i18n="products.cta.title">Connect the field to your command center</h2>
+      <p class="section__lead" data-i18n="products.cta.lead">Our control suite ships ready to plug into Supabase, Azure, or AWS so your telemetry, customer portal, and billing flows are a configuration away.</p>
+      <ul class="bullet-list">
+        <li data-i18n="products.cta.bullets.0">Realtime dashboards and alerts API</li>
+        <li data-i18n="products.cta.bullets.1">Digital twin modelling &amp; predictive maintenance</li>
+        <li data-i18n="products.cta.bullets.2">Premium finishes, corrosion-proof, installer friendly</li>
+      </ul>
+      <div class="hero__actions">
+        {{ ui.button('Talk to engineering', variant='primary', href='/contact', translation_key='products.cta.cta_button') }}
+      </div>
+    </div>
+    <div class="product-cta__card" role="presentation">
+      <p class="product-cta__meta" data-i18n="products.cta.meta">Powered by AquaOS™ orchestration layer</p>
+      <img class="product-cta__logo" src="{{ url_for('static', filename='img/aquapump-logo-mark.svg') }}" alt="" loading="lazy" aria-hidden="true" />
+      <p class="product-cta__caption" data-i18n="products.cta.caption">Add credentials, containerize, deploy. That’s it.</p>
     </div>
   </div>
 </section>
