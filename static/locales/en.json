@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "AquaPump — Israeli Water Innovation",
-    "description": "AquaPump is an Israeli Aquatech Group company delivering premium pumps, digital twins, and telemetry-ready infrastructure for municipalities, industry, and agriculture."
+    "title": "AquaPump — Precision Water Intelligence",
+    "description": "Apple-level industrial design meets Tesla-grade analytics. Premium pump systems ready for Supabase, AI, and smart telemetry."
   },
   "header": {
     "brand": "AquaPump",
@@ -27,19 +27,19 @@
   },
   "home": {
     "hero": {
-      "crest": "Israeli precision water intelligence",
+      "crest": "Precision water intelligence",
       "title": "Future-proof water infrastructure.",
-      "subtitle": "AquaPump is an Israeli company within the Aquatech Group crafting premium pump systems with Apple-level finish, Tesla-grade analytics, and deployment-ready Supabase integrations.",
+      "subtitle": "We design, deploy, and maintain premium pump systems for critical industries with signature Apple-level finish and Tesla-grade performance analytics.",
       "primary": "Explore platform",
       "secondary": "Talk to engineering",
       "features": [
-        "Israeli engineering backed by Aquatech Group",
+        "Digital twin dashboards out of the box",
         "Supabase-ready event streaming for instant alerts",
-        "Digital twins and predictive maintenance dashboards"
+        "Sustainable builds with premium industrial design"
       ],
       "panel_title": "AquaPump heritage badge",
-      "panel_body": "Since 1991, Israeli-crafted systems powering municipalities, industry, and agri-tech worldwide.",
-      "panel_meta": "Member of Aquatech Group · ISO 9001 · GreenMark",
+      "panel_body": "Since 1991 we have delivered silent efficiency for municipal, industrial, and agri-tech partners.",
+      "panel_meta": "ISO 9001 · GreenMark · UL Listed",
       "uptime_label": "Verified uptime",
       "uptime_value": "99.97%",
       "savings_label": "Energy reduction",
@@ -153,7 +153,7 @@
   "products": {
     "chip": "Catalog",
     "title": "Signature systems by AquaPump",
-    "lead": "Israeli-engineered pumps from the Aquatech Group network with telemetry-ready controls, premium finishes, and container-ready deployment patterns.",
+    "lead": "Every unit ships with pristine finishes, smart telemetry, and energy-smart configurations ready for your Supabase keys.",
     "items": [
       {
         "title": "Smart Pump SAJ",
@@ -204,30 +204,6 @@
       "cta_button": "Talk to engineering",
       "meta": "Powered by AquaOS™ orchestration layer",
       "caption": "Add credentials, containerize, deploy. That’s it."
-    },
-    "performance": {
-      "chip": "Performance",
-      "title": "Built for global scale",
-      "lead": "Hardware, firmware, and UI designed together to keep flow, uptime, and insights synchronized across every site.",
-      "bullets": [
-        "Edge-accelerated data collection with Israeli-grade security",
-        "Modular skid architecture for fast deployment",
-        "Fully documented REST and webhook interfaces"
-      ],
-      "metrics": [
-        {
-          "title": "Container ready",
-          "body": "Drop in your API keys, build the Docker image, and run with observability baked in."
-        },
-        {
-          "title": "Global compliance",
-          "body": "Meets Israeli, EU, and US drinking water, wastewater, and industrial standards."
-        },
-        {
-          "title": "Service anywhere",
-          "body": "Aquatech Group partners keep Israeli expertise within reach worldwide."
-        }
-      ]
     }
   },
   "contact": {
@@ -275,25 +251,6 @@
         }
       ],
       "meta": "Looking for API access? Add your keys to the .env file and go live."
-    },
-    "extra": {
-      "chip": "Partnership",
-      "title": "Aquatech Group coverage",
-      "lead": "From Tel Aviv headquarters to regional service hubs, we bring Israeli innovation and Aquatech Group resources wherever you operate.",
-      "metrics": [
-        {
-          "title": "22 partner sites",
-          "body": "Shared parts inventory and 24/7 call centers keep deployments resilient."
-        },
-        {
-          "title": "Dedicated launch team",
-          "body": "We guide you from API key setup to full containerized rollouts."
-        },
-        {
-          "title": "Global support SLA",
-          "body": "Israeli engineers coordinate with Aquatech partners for seamless maintenance."
-        }
-      ]
     }
   },
   "chat": {

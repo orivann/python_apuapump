@@ -22,19 +22,13 @@
   const DEFAULT_LANG = 'en';
   const DEFAULT_THEME = 'light';
 
-  let lang = localStorage.getItem('lang') || DEFAULT_LANG;
-  let theme = localStorage.getItem('theme') || DEFAULT_THEME;
+  let lang = DEFAULT_LANG;
+  let theme = DEFAULT_THEME;
   let langRequestToken = 0;
   let translations = {};
 
-  if (lang !== DEFAULT_LANG) {
-    lang = DEFAULT_LANG;
-  }
-  if (theme !== DEFAULT_THEME) {
-    theme = DEFAULT_THEME;
-  }
-  localStorage.setItem('lang', lang);
-  localStorage.setItem('theme', theme);
+  localStorage.setItem('lang', DEFAULT_LANG);
+  localStorage.setItem('theme', DEFAULT_THEME);
 
   langBtn?.setAttribute('dir', 'ltr');
 
