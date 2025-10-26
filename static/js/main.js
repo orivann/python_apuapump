@@ -188,7 +188,11 @@
     const safeText = escapeHtml(text);
     bubble.innerHTML = `<p>${safeText}</p><span class="message__time">${new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>`;
     chatMessages.appendChild(bubble);
-    chatMessages.scrollTo({ top: chatMessages.scrollHeight, behavior: 'smooth' });
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    chatMessages.scrollTo({
+      top: chatMessages.scrollHeight,
+      behavior: prefersReducedMotion ? 'auto' : 'smooth',
+    });
   }
 
   function setChatState(open) {

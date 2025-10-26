@@ -8,6 +8,8 @@
     "brand_home": "AquaPump home",
     "nav_products": "Products",
     "nav_technology": "Technology",
+    "nav_impact": "Impact",
+    "nav_aquatech": "Aquatech Group",
     "nav_sustainability": "Sustainability",
     "nav_contact": "Contact",
     "cta_quote": "Get Quote",
@@ -84,6 +86,30 @@
         }
       ]
     },
+    "impact": {
+      "chip": "Impact",
+      "title": "Speed, stability, and savings",
+      "lead": "Optimized UI and UX deliver quicker decisions, while our Israeli-built hardware cuts commissioning time and energy consumption across every deployment.",
+      "bullets": [
+        "Responsive across mobile, tablet, and command centers",
+        "Edge and cloud telemetry tuned for sub-second refresh",
+        "SEO-first architecture to help prospects find AquaPump"
+      ],
+      "metrics": [
+        {
+          "title": "↓ 42% faster launch",
+          "body": "Optimized assets, caching, and structured data for best-in-class speed scores."
+        },
+        {
+          "title": "Global uptime mesh",
+          "body": "Redundant Israeli-built panels with Aquatech Group field teams on call 24/7."
+        },
+        {
+          "title": "SEO-ready structure",
+          "body": "Semantic markup, JSON-LD, and keyword-rich copy capture every lead."
+        }
+      ]
+    },
     "sustainability": {
       "chip": "Sustainability",
       "title": "Smarter Energy, Smaller Footprint",
@@ -96,6 +122,32 @@
       "cta": "View Technology",
       "metric": "18%",
       "caption": "Average efficiency gains vs. legacy systems"
+    },
+    "aquatech": {
+      "chip": "Aquatech Group",
+      "title": "Part of Israel's Aquatech Group",
+      "lead": "As a proud member of the Aquatech Group, AquaPump delivers integrated solutions backed by nationwide service teams and decades of Israeli water innovation.",
+      "bullets": [
+        "National coverage with Aquatech service hubs",
+        "Shared R&D fueling next-gen pump intelligence",
+        "Seamless hand-off from design to installation"
+      ],
+      "cta": "Meet Aquatech Group",
+      "meta": "Aquatech Group · Tel Aviv · Since 1991",
+      "grid": [
+        {
+          "label": "Projects delivered",
+          "value": "1,200+"
+        },
+        {
+          "label": "Response time",
+          "value": "<15 min"
+        },
+        {
+          "label": "Group partners",
+          "value": "22"
+        }
+      ]
     }
   },
   "products": {
@@ -157,7 +209,7 @@
   "contact": {
     "chip": "Let’s talk",
     "title": "Contact Us",
-    "lead": "Tell us about your project. We’ll reply within one business day.",
+    "lead": "Connect with AquaPump’s Israeli engineering team. As part of the Aquatech Group we respond in minutes and stay with you through deployment.",
     "form": {
       "name_label": "Full Name",
       "phone_label": "Phone",
@@ -203,17 +255,16 @@
   },
   "chat": {
     "toggle_label": "Chat with us",
-    "close": "Close chat",
     "title": "AquaBot",
     "subtitle": "How can we help?",
     "intro": "Hi! I’m AquaBot. Ask me about products, quotes, or support.",
     "status": "Online now",
-    "placeholder": "Type a message…",
+    "placeholder": "Type your message…",
     "send": "Send",
-    "contact_confirmation": "Thanks for reaching out! We will contact you shortly.",
     "placeholder_reply": {
       "ready": "Connecting you with AquaBot… (integration coming soon).",
       "fallback": "Thanks! A specialist will reach out shortly."
-    }
+    },
+    "contact_confirmation": "Thanks for reaching out! We will contact you shortly."
   }
 }
