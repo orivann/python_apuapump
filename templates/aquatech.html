@@ -1,0 +1,129 @@
+{% extends 'base.html' %}
+{% import 'components.html' as ui %}
+
+{% block hero %}
+<header class="hero hero--subpage hero--aquatech">
+  <div class="container hero__inner">
+    <div class="hero__content">
+      <span class="chip chip--ghost" data-i18n="aquatech.hero.chip">Aquatech Group</span>
+      <h1 class="hero__title" data-i18n="aquatech.hero.title">Israeli heritage. Global water leadership.</h1>
+      <p class="hero__lead" data-i18n="aquatech.hero.lead">AquaPump is a flagship company inside the Aquatech Group. Together we combine Tel Aviv innovation with a worldwide network of experts.</p>
+      <div class="hero__actions">
+        {{ ui.button('Explore careers', variant='primary', href='#careers', translation_key='aquatech.hero.primary') }}
+        {{ ui.button('Visit Aquatech Group', variant='outline', href='https://www.aquatech.co.il/', translation_key='aquatech.hero.secondary') }}
+      </div>
+    </div>
+  </div>
+  <div class="hero__wave" aria-hidden="true"></div>
+</header>
+{% endblock %}
+
+{% block content %}
+<section class="section" id="heritage">
+  <div class="container section__inner section__inner--split">
+    <div>
+      <span class="chip chip--ghost" data-i18n="aquatech.heritage.chip">Heritage</span>
+      <h2 class="section__title" data-i18n="aquatech.heritage.title">Built in Israel since 1991</h2>
+      <p class="section__lead" data-i18n="aquatech.heritage.lead">Our founding teams engineered the nation’s earliest desalination control systems. Today we channel that experience into digitized pumping ecosystems.</p>
+      <ul class="timeline timeline--compact">
+        <li class="timeline__item" data-i18n="aquatech.heritage.timeline.0">1991 · Aquatech Group founded in Tel Aviv to accelerate water resilience.</li>
+        <li class="timeline__item" data-i18n="aquatech.heritage.timeline.1">2002 · AquaPump launches precision booster line serving national infrastructure.</li>
+        <li class="timeline__item" data-i18n="aquatech.heritage.timeline.2">2018 · Digital twin monitoring rolls out across all new deployments.</li>
+      </ul>
+    </div>
+    <aside class="heritage-card" aria-label="Heritage metrics">
+      <p class="heritage-card__meta" data-i18n="aquatech.heritage.meta">Aquatech Group at a glance</p>
+      <div class="heritage-card__grid">
+        <div>
+          <span data-i18n="aquatech.heritage.metrics.0.label">Experts worldwide</span>
+          <strong data-i18n="aquatech.heritage.metrics.0.value">640+</strong>
+        </div>
+        <div>
+          <span data-i18n="aquatech.heritage.metrics.1.label">Countries served</span>
+          <strong data-i18n="aquatech.heritage.metrics.1.value">32</strong>
+        </div>
+        <div>
+          <span data-i18n="aquatech.heritage.metrics.2.label">Active patents</span>
+          <strong data-i18n="aquatech.heritage.metrics.2.value">48</strong>
+        </div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="section section--surface" id="network">
+  <div class="container section__inner section__inner--split network">
+    <div>
+      <span class="chip chip--ghost" data-i18n="aquatech.network.chip">Global network</span>
+      <h2 class="section__title" data-i18n="aquatech.network.title">Rapid response, everywhere</h2>
+      <p class="section__lead" data-i18n="aquatech.network.lead">Our Israeli HQ orchestrates global field teams across Europe, North America, and APAC.</p>
+      <ul class="bullet-list">
+        <li data-i18n="aquatech.network.points.0">24/7 command center in Tel Aviv monitors telemetry</li>
+        <li data-i18n="aquatech.network.points.1">Regional service hubs in Milan, Houston, Bengaluru, and Sydney</li>
+        <li data-i18n="aquatech.network.points.2">Shared knowledge base with multilingual playbooks</li>
+      </ul>
+    </div>
+    <div class="network-map" aria-hidden="true">
+      <div class="network-map__glow"></div>
+      <div class="network-map__points">
+        <span class="network-map__point" data-label="Tel Aviv"></span>
+        <span class="network-map__point" data-label="Milan"></span>
+        <span class="network-map__point" data-label="Houston"></span>
+        <span class="network-map__point" data-label="Bengaluru"></span>
+        <span class="network-map__point" data-label="Sydney"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="careers">
+  <div class="container section__inner">
+    <div class="section__header">
+      <span class="chip chip--ghost" data-i18n="aquatech.careers.chip">Careers</span>
+      <h2 class="section__title" data-i18n="aquatech.careers.title">Join a team engineering the future of water</h2>
+      <p class="section__lead" data-i18n="aquatech.careers.lead">We hire builders who thrive at the intersection of industrial design, software, and sustainability.</p>
+    </div>
+    <div class="career-grid">
+      <article class="career-card">
+        <h3 data-i18n="aquatech.careers.items.0.title">Systems engineer — Tel Aviv</h3>
+        <p data-i18n="aquatech.careers.items.0.body">Lead end-to-end pump deployments, integrating telemetry and AI diagnostics.</p>
+        <a class="career-card__cta" href="mailto:careers@aquapump.com" data-i18n="aquatech.careers.items.0.cta">Apply now</a>
+      </article>
+      <article class="career-card">
+        <h3 data-i18n="aquatech.careers.items.1.title">Full-stack developer — Hybrid</h3>
+        <p data-i18n="aquatech.careers.items.1.body">Build Next.js experiences, Supabase integrations, and analytics dashboards.</p>
+        <a class="career-card__cta" href="mailto:careers@aquapump.com" data-i18n="aquatech.careers.items.1.cta">Apply now</a>
+      </article>
+      <article class="career-card">
+        <h3 data-i18n="aquatech.careers.items.2.title">Field technician — Global</h3>
+        <p data-i18n="aquatech.careers.items.2.body">Deploy and maintain AquaPump systems with onsite Aquatech Group teams.</p>
+        <a class="career-card__cta" href="mailto:careers@aquapump.com" data-i18n="aquatech.careers.items.2.cta">Apply now</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section section--surface" id="values">
+  <div class="container section__inner section__inner--split values">
+    <div>
+      <span class="chip chip--ghost" data-i18n="aquatech.values.chip">Values</span>
+      <h2 class="section__title" data-i18n="aquatech.values.title">Culture that powers innovation</h2>
+      <p class="section__lead" data-i18n="aquatech.values.lead">We operate with transparency, precision, and a relentless focus on customer success.</p>
+    </div>
+    <ul class="values-list" role="list">
+      <li>
+        <h3 data-i18n="aquatech.values.items.0.title">Israeli ingenuity</h3>
+        <p data-i18n="aquatech.values.items.0.body">Multidisciplinary squads iterate quickly, grounded in Aquatech’s engineering legacy.</p>
+      </li>
+      <li>
+        <h3 data-i18n="aquatech.values.items.1.title">Sustainable outcomes</h3>
+        <p data-i18n="aquatech.values.items.1.body">Every decision considers water stewardship, energy efficiency, and social impact.</p>
+      </li>
+      <li>
+        <h3 data-i18n="aquatech.values.items.2.title">Customer obsession</h3>
+        <p data-i18n="aquatech.values.items.2.body">We co-create with partners, offering proactive support and real-time telemetry insights.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+{% endblock %}

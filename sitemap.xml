@@ -3,5 +3,8 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://example.com/</loc></url>
   <url><loc>https://example.com/products</loc></url>
+  <url><loc>https://example.com/technology</loc></url>
+  <url><loc>https://example.com/impact</loc></url>
+  <url><loc>https://example.com/aquatech-group</loc></url>
   <url><loc>https://example.com/contact</loc></url>
 </urlset>

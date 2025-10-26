@@ -1,0 +1,133 @@
+{% extends 'base.html' %}
+{% import 'components.html' as ui %}
+
+{% block hero %}
+<header class="hero hero--subpage hero--impact">
+  <div class="container hero__inner">
+    <div class="hero__content">
+      <span class="chip chip--ghost" data-i18n="impact.hero.chip">Impact</span>
+      <h1 class="hero__title" data-i18n="impact.hero.title">Outcomes engineered in Israel, delivered worldwide</h1>
+      <p class="hero__lead" data-i18n="impact.hero.lead">Explore how AquaPump and the Aquatech Group transform critical infrastructure with measurable uptime, sustainability, and conversion gains.</p>
+      <div class="hero__actions">
+        {{ ui.button('View case studies', variant='primary', href='#case-studies', translation_key='impact.hero.primary') }}
+        {{ ui.button('Get project audit', variant='outline', href='/contact', translation_key='impact.hero.secondary') }}
+      </div>
+    </div>
+  </div>
+  <div class="hero__wave" aria-hidden="true"></div>
+</header>
+{% endblock %}
+
+{% block content %}
+<section class="section section--surface" id="metrics">
+  <div class="container section__inner impact-metrics-grid">
+    <div class="section__header">
+      <span class="chip chip--ghost" data-i18n="impact.metrics.chip">Proof points</span>
+      <h2 class="section__title" data-i18n="impact.metrics.title">Performance benchmarks we guarantee</h2>
+      <p class="section__lead" data-i18n="impact.metrics.lead">Measured across mobile and desktop, our digital and physical stack keeps conversions high and operational costs low.</p>
+    </div>
+    <div class="stat-bar stat-bar--spread">
+      {{ ui.stat_block(1, '99.97%', 'Uptime across fleets', translation_key='impact.metrics.stats.0') }}
+      {{ ui.stat_block(2, '↓32%', 'Energy usage', translation_key='impact.metrics.stats.1') }}
+      {{ ui.stat_block(3, '↑45%', 'Lead conversion', translation_key='impact.metrics.stats.2') }}
+      {{ ui.stat_block(4, '1.8s', 'Largest Contentful Paint', translation_key='impact.metrics.stats.3') }}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="case-studies">
+  <div class="container section__inner">
+    <div class="section__header">
+      <span class="chip chip--ghost" data-i18n="impact.case_studies.chip">Case studies</span>
+      <h2 class="section__title" data-i18n="impact.case_studies.title">Real projects. Real numbers.</h2>
+      <p class="section__lead" data-i18n="impact.case_studies.lead">From Israeli municipalities to global agritech leaders, AquaPump delivers measurable performance improvements.</p>
+    </div>
+    <div class="case-grid">
+      <article class="case-card">
+        <header>
+          <span class="case-card__tag" data-i18n="impact.case_studies.items.0.tag">Municipal</span>
+          <h3 data-i18n="impact.case_studies.items.0.title">Dan Region pumping overhaul</h3>
+        </header>
+        <p data-i18n="impact.case_studies.items.0.body">Converted 18 pumping stations to AquaPump telemetry. Achieved 43% faster fault detection and 28% drop in truck rolls.</p>
+        <ul class="case-card__metrics">
+          <li><strong data-i18n="impact.case_studies.items.0.metrics.0.value">↓28%</strong><span data-i18n="impact.case_studies.items.0.metrics.0.label">Maintenance costs</span></li>
+          <li><strong data-i18n="impact.case_studies.items.0.metrics.1.value">↓8hrs</strong><span data-i18n="impact.case_studies.items.0.metrics.1.label">Average outage</span></li>
+        </ul>
+      </article>
+      <article class="case-card">
+        <header>
+          <span class="case-card__tag" data-i18n="impact.case_studies.items.1.tag">Industry</span>
+          <h3 data-i18n="impact.case_studies.items.1.title">Galilee food processing plant</h3>
+        </header>
+        <p data-i18n="impact.case_studies.items.1.body">VFD retrofits with AquaPump analytics cut energy bills by 35% while keeping CIP cycles within ±1% pressure variance.</p>
+        <ul class="case-card__metrics">
+          <li><strong data-i18n="impact.case_studies.items.1.metrics.0.value">↓35%</strong><span data-i18n="impact.case_studies.items.1.metrics.0.label">Energy spend</span></li>
+          <li><strong data-i18n="impact.case_studies.items.1.metrics.1.value">↑22%</strong><span data-i18n="impact.case_studies.items.1.metrics.1.label">Output capacity</span></li>
+        </ul>
+      </article>
+      <article class="case-card">
+        <header>
+          <span class="case-card__tag" data-i18n="impact.case_studies.items.2.tag">Agriculture</span>
+          <h3 data-i18n="impact.case_studies.items.2.title">Negev smart irrigation</h3>
+        </header>
+        <p data-i18n="impact.case_studies.items.2.body">Deployed remote sensing with AquaBot insights. Water use dropped 31% while yields grew 18% year-over-year.</p>
+        <ul class="case-card__metrics">
+          <li><strong data-i18n="impact.case_studies.items.2.metrics.0.value">↓31%</strong><span data-i18n="impact.case_studies.items.2.metrics.0.label">Water usage</span></li>
+          <li><strong data-i18n="impact.case_studies.items.2.metrics.1.value">↑18%</strong><span data-i18n="impact.case_studies.items.2.metrics.1.label">Yield increase</span></li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section section--surface" id="sustainability">
+  <div class="container section__inner section__inner--split sustainability-impact">
+    <div>
+      <span class="chip chip--ghost" data-i18n="impact.sustainability.chip">Sustainability</span>
+      <h2 class="section__title" data-i18n="impact.sustainability.title">Sustainable by design</h2>
+      <p class="section__lead" data-i18n="impact.sustainability.lead">Our roadmap aligns with Israeli GreenMark compliance and global ESG standards.</p>
+      <ul class="timeline timeline--compact">
+        <li class="timeline__item" data-i18n="impact.sustainability.timeline.0">2024 · 100% renewable energy powering our Israeli manufacturing partners.</li>
+        <li class="timeline__item" data-i18n="impact.sustainability.timeline.1">2025 · Lifecycle analytics reduce carbon emissions per project by 22%.</li>
+        <li class="timeline__item" data-i18n="impact.sustainability.timeline.2">2026 · Circular refurbishment program extends hardware life by 40%.</li>
+      </ul>
+    </div>
+    <aside class="sustainability-score" aria-label="Sustainability scorecard">
+      <h3 data-i18n="impact.sustainability.score.title">Impact Index</h3>
+      <dl>
+        <div>
+          <dt data-i18n="impact.sustainability.score.items.0.label">Scope 1 emissions</dt>
+          <dd data-i18n="impact.sustainability.score.items.0.value">Net zero</dd>
+        </div>
+        <div>
+          <dt data-i18n="impact.sustainability.score.items.1.label">Water recovered</dt>
+          <dd data-i18n="impact.sustainability.score.items.1.value">2.1B litres</dd>
+        </div>
+        <div>
+          <dt data-i18n="impact.sustainability.score.items.2.label">Communities served</dt>
+          <dd data-i18n="impact.sustainability.score.items.2.value">58 municipalities</dd>
+        </div>
+      </dl>
+    </aside>
+  </div>
+</section>
+
+<section class="section" id="testimonials">
+  <div class="container section__inner">
+    <div class="section__header">
+      <span class="chip chip--ghost" data-i18n="impact.testimonials.chip">Voices</span>
+      <h2 class="section__title" data-i18n="impact.testimonials.title">Trusted by leaders</h2>
+    </div>
+    <div class="quote-grid">
+      <figure class="quote-card">
+        <blockquote data-i18n="impact.testimonials.items.0.quote">“AquaPump gave us the polish of a consumer brand with the telemetry rigor we needed. Launch took weeks, not months.”</blockquote>
+        <figcaption data-i18n="impact.testimonials.items.0.meta">Yael Cohen — CTO, Tel Aviv Water Authority</figcaption>
+      </figure>
+      <figure class="quote-card">
+        <blockquote data-i18n="impact.testimonials.items.1.quote">“The Aquatech Group collaboration means we get Israeli expertise onsite plus global logistics. It’s a powerhouse.”</blockquote>
+        <figcaption data-i18n="impact.testimonials.items.1.meta">Rafael Adler — COO, Negev AgriTech</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+{% endblock %}
